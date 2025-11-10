@@ -1,0 +1,27 @@
+/* Grid container (like .row in Bootstrap) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
+  gap: 1rem; /* optional spacing between columns */
+}
+
+/* Column sizes */
+.col-lg-1 { grid-column: span 1; }
+.col-lg-2 { grid-column: span 2; }
+.col-lg-3 { grid-column: span 3; }
+.col-lg-4 { grid-column: span 4; }
+.col-lg-5 { grid-column: span 5; }
+.col-lg-6 { grid-column: span 6; }
+.col-lg-7 { grid-column: span 7; }
+.col-lg-8 { grid-column: span 8; }
+.col-lg-9 { grid-column: span 9; }
+.col-lg-10 { grid-column: span 10; }
+.col-lg-11 { grid-column: span 11; }
+.col-lg-12 { grid-column: span 12; }
+
+/* Optional: make full-width columns stack on small screens */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; /* one column on mobile */
+  }
+}

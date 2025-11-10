@@ -1,0 +1,72 @@
+.content-image{
+
+  .box{
+    padding: 0;
+    background: transparent;
+
+    & > img{
+      width: 100%;
+      min-height: 460px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+    }
+  }
+
+  &__title{
+    font-family: var(--font-primary);
+    font-size: var(--size-h3);
+    margin-bottom: 1rem;
+    max-width: 600px;
+  }
+
+  &__subtitle{
+    font-size: var(--size-h6);
+  }
+
+  .content-image__container{
+    align-items: center;
+    margin-top: 2.5rem;
+    gap: 3rem;
+
+    h3,h4,h5,h6{
+      font-size: var(--size-h5);
+      margin-bottom: 1rem;
+    }
+
+    p{
+      margin-bottom: 1rem;
+    }
+
+    p:last-of-type{
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@include md{
+
+  .benefits{
+
+    .box{
+
+      & > img{
+        min-height: 360px;
+      }
+    }
+
+    .benefits__container{
+      margin-top: 1.5rem;
+      gap: 3rem;
+    }
+
+    .benefits-item{
+      margin-bottom: 1rem;
+      max-width: none;
+
+      &:last-of-type{
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+}

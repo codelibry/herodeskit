@@ -1,0 +1,35 @@
+.banner-slider {
+  .slider-wrapper{
+    position: relative;
+  }
+
+  .swiper-pagination-bullet{
+    background-color: var(--color-white);
+    height: 10px;
+    width: 10px;
+  }
+}
+
+.banner-slide {
+  padding: 3.5rem;
+  min-height: 30rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+
+  img {
+    @include image-cover;
+    position: absolute;
+    inset: 0;
+  }
+
+  &__content {
+    position: relative;
+    max-width: 80%;
+  }
+
+  @include md {
+    padding: 1.5rem;
+  }
+}
