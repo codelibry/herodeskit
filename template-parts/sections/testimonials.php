@@ -1,13 +1,7 @@
 <?php
 
-if (isset($args['is_example'])){
-    $subtitle = $args['testimonials_subtitle'];
-    $title = $args['testimonials_title'];
-}
-else{
-    $subtitle = get('testimonials_subtitle');
-    $title = get('testimonials_title');
-}
+$subtitle = $args['testimonials_subtitle'] ?? get_sub_field('testimonials_subtitle');
+$title = $args['testimonials_title'] ?? get_sub_field('testimonials_title');
 
 $query_args = array(
     'post_type'      => 'testimonial',
@@ -19,7 +13,7 @@ $testim_query = new WP_Query($query_args);
 
 ?>
 
-<?php if ($testim_query->have_posts() || isset($args['is_example'])): ?>
+<?php if ($testim_query->have_posts()): ?>
     <section class="testimonial-slider | section" style="position: relative;">
         <div class="container flow">
              <?php if($title): ?>
@@ -35,42 +29,6 @@ $testim_query = new WP_Query($query_args);
             <div class="slider-wrapper | flow">
                 <div class="swiper">
                     <ul class="swiper-wrapper">
-                        <?php if (isset($args['is_example'])):?>
-                            <?php
-                            ob_start();
-                            ?>
-                            <li class='testimonial-slide | swiper-slide'>
-                                <div class="testimonial-slide__content">
-                                    <div class="testimonial-slide__rating">
-                                        <?php for($i = 0; $i < 5; $i++){ ?>
-                                            <span class="star"></span>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="testimonial-slide__text">
-                                        <?php echo 'Testimonials Client Feedback'; ?>
-                                    </div>
-                                    <div class="testimonial-slide__meta">
-                                        <div class="testimonial-slide__avatar">
-                                            <img src="<?php echo CODELIBRY_THEME_URI . '/src/assets/images/placeholder.jpg'; ?>" width="56" height="56">
-                                        </div>
-                                        <div class="testimonial-slide__meta-box">
-                                            <div class="testimonial-slide__name">
-                                                <?php echo 'Testimonial Client Name'; ?>
-                                            </div>
-                                            <div class="testimonial-slide__pos">
-                                                <?php echo 'Client Position'; ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <?php
-                            $testimonial_example = ob_get_clean();
-                            for ($i = 1; $i <= 3; $i++) {
-                                echo $testimonial_example;
-                            }
-                            ?>
-                        <?php else: ?>
                             <?php while ($testim_query->have_posts()) :
                                 $testim_query->the_post();
                                     $name = get_the_title();
@@ -116,7 +74,6 @@ $testim_query = new WP_Query($query_args);
                                     </li>
                             <?php wp_reset_postdata(); ?>
                             <?php endwhile; ?>
-                        <?php endif; ?>
                     </ul>
                 </div>
                 <div class="testimonial-swiper-pagination swiper-pagination"></div>

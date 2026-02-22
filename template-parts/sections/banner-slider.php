@@ -1,11 +1,6 @@
 <?php
 
-if (isset($args['is_example'])){
-    $slider = $args['slider'];
-}
-else{
-    $slider = get('slider');
-}
+$slider = $args['slider'] ?? get_sub_field('slider');
 
 if(empty($slider)) {
   return;

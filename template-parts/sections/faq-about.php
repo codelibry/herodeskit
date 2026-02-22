@@ -1,23 +1,12 @@
 <?php
 
-if (isset($args['is_example'])){
-    $about_content = $args['faq-about__about-content'];
-    $contacts_content = $args['faq-about__contacts-content'];
-    $about_image = $args['faq-about__about-image'];
-    $faq_title = $args['faq-about__faq-title'];
-    $faq_subtitle = $args['faq-about__faq-subtitle'];
-    $faq_image = $args['faq-about__faq-image'];
-    $faq_list = $args['faq-about__faq-list'];
-}
-else{
-    $about_content = get('faq-about__about-content');
-    $contacts_content = get('faq-about__contacts-content');
-    $about_image = get('faq-about__about-image');
-    $faq_title = get('faq-about__faq-title');
-    $faq_subtitle = get('faq-about__faq-subtitle');
-    $faq_image = get('faq-about__faq-image');
-    $faq_list = get('faq-about__faq-list');
-}
+$about_content = $args['faq-about__about-content'] ?? get_sub_field('faq-about__about-content');
+$contacts_content = $args['faq-about__contacts-content'] ?? get_sub_field('faq-about__contacts-content');
+$about_image = $args['faq-about__about-image'] ?? get_sub_field('faq-about__about-image');
+$faq_title = $args['faq-about__faq-title'] ?? get_sub_field('faq-about__faq-title');
+$faq_subtitle = $args['faq-about__faq-subtitle'] ?? get_sub_field('faq-about__faq-subtitle');
+$faq_image = $args['faq-about__faq-image'] ?? get_sub_field('faq-about__faq-image');
+$faq_list = $args['faq-about__faq-list'] ?? get_sub_field('faq-about__faq-list');
 
 if(empty($about_content) && empty($contacts_content) && empty($faq_list)) {
     return;

@@ -1,65 +1,71 @@
 <?php
 
-if (isset($args['is_example'])){
-    $content_subtitle = $args['content-subtitle'];
-    $content_title = $args['content-title'];
-    $content_image = $args['content-image_image'];
-    $content_content = $args['content-image_content'];
-    $button = $args['content-button'];
-}
-else{
-    $content_subtitle = get('content-subtitle');
-    $content_title = get('content-title');
-    $content_image = get('content-image_image');
-    $content_content = get('content-image_content');
-    $button = get('content-button');
-}
+$direction   = $args['content-image__direction'] ?? get_sub_field('content-image__direction');
+$ratio       = $args['content-image__ratio'] ?? get_sub_field('content-image__ratio');
+$image       = $args['content-image__image'] ?? get_sub_field('content-image__image');
+$subtitle    = $args['content-image__subtitle'] ?? get_sub_field('content-image__subtitle');
+$title       = $args['content-image__title'] ?? get_sub_field('content-image__title');
+$content     = $args['content-image__content'] ?? get_sub_field('content-image__content');
+$card_number = $args['content-image__card-number'] ?? get_sub_field('content-image__card-number');
+$card_text   = $args['content-image__card-text'] ?? get_sub_field('content-image__card-text');
 
-
-if(empty($content_title) && empty($content_subtitle) && empty($content_content)) {
+if (empty($title)) {
     return;
 }
 
+$direction = $direction ?: 'image-left';
+$ratio     = $ratio ?: 'portrait';
+$modifier  = $direction === 'image-right' ? 'content-image--reversed' : '';
+$ratio_class = 'content-image--' . $ratio;
+
 ?>
 
-<section class="content-image | section">
-    <div class="container | flow">
-        <?php if($content_title): ?>
-            <h2 class="content-image__title">
-                <?php echo $content_title ?>
-            </h2>
-        <?php endif; ?>
+<section class="content-image <?php echo esc_attr($modifier); ?> <?php echo esc_attr($ratio_class); ?>">
+    <div class="container">
+        <div class="content-image__row">
 
-        <?php if($content_subtitle): ?>
-            <p class="content-image__subtitle">
-                <?php echo $content_subtitle ?>
-            </p>
-        <?php endif; ?>
-
-        <div class="content-image__container auto-grid" data-layout="50-50" id="content-image"> 
-            <?php if($content_image): ?>
-                <div class="box">
-                    <?php if (is_numeric($content_image)): ?>
-                    <?php echo wp_get_attachment_image($content_image, 'medium', false, [
-                        'loading' => 'lazy'
-                    ]) ?>
+            <?php if ($image): ?>
+                <div class="content-image__media">
+                    <?php if (is_numeric($image)): ?>
+                        <?php echo wp_get_attachment_image($image, 'large', false, [
+                            'class'   => 'content-image__img',
+                            'loading' => 'lazy',
+                        ]) ?>
                     <?php else: ?>
-                        <img src="<?php echo $content_image; ?>" class="attachment-large size-large" alt="test-slide-image" decoding="sync" fetchpriority="high">
+                        <img class="content-image__img" src="<?php echo esc_url($image); ?>" alt="" loading="lazy">
+                    <?php endif; ?>
+
+                    <?php if ($card_number || $card_text): ?>
+                        <div class="content-image__card">
+                            <?php if ($card_number): ?>
+                                <span class="content-image__card-number"><?php echo esc_html($card_number); ?></span>
+                            <?php endif; ?>
+                            <?php if ($card_text): ?>
+                                <p class="content-image__card-text"><?php echo wp_kses_post($card_text); ?></p>
+                            <?php endif; ?>
+                        </div>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
 
-            <?php if(!empty($content_content)): ?>
-                <div class="box | content-image__content | content">
-                    <?php echo $content_content ?>
-                        
-                    <?php if($button): ?>
-                        <a class="button" href="<?php echo $button['url'] ?>">
-                            <?php echo $button['title'] ?>
-                        </a>
-                    <?php endif; ?>
-                </div>
-            <?php endif; ?>
+            <div class="content-image__body">
+                <?php if ($subtitle): ?>
+                    <p class="content-image__subtitle">
+                        <?php echo esc_html($subtitle); ?>
+                    </p>
+                <?php endif; ?>
+
+                <h2 class="content-image__title">
+                    <?php echo esc_html($title); ?>
+                </h2>
+
+                <?php if ($content): ?>
+                    <div class="content-image__content | content">
+                        <?php echo $content; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+
         </div>
     </div>
 </section>

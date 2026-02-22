@@ -1,14 +1,1 @@
-.not-found {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-inline: auto;
-  max-width: 80ch;
-  text-align: center;
-
-  &__button {
-    margin-top: 2.5rem;
-    justify-content: center;
-  }
-}
+/* 404 page-level styles are in blocks/_not-found.scss */

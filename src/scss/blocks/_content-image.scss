@@ -1,72 +1,297 @@
-.content-image{
+.content-image {
+  background-color: var(--color-dark-alt);
+  padding: 4.6875rem 0 5.625rem; /* 75px / 90px */
 
-  .box{
-    padding: 0;
-    background: transparent;
-
-    & > img{
-      width: 100%;
-      min-height: 460px;
-      object-fit: cover;
-      border-radius: var(--radius-lg);
-    }
-  }
-
-  &__title{
-    font-family: var(--font-primary);
-    font-size: var(--size-h3);
-    margin-bottom: 1rem;
-    max-width: 600px;
-  }
-
-  &__subtitle{
-    font-size: var(--size-h6);
-  }
-
-  .content-image__container{
+  &__row {
+    display: flex;
+    gap: 7.5rem; /* 120px */
     align-items: center;
-    margin-top: 2.5rem;
-    gap: 3rem;
-
-    h3,h4,h5,h6{
-      font-size: var(--size-h5);
-      margin-bottom: 1rem;
-    }
-
-    p{
-      margin-bottom: 1rem;
-    }
-
-    p:last-of-type{
-      margin-bottom: 2rem;
-    }
   }
-}
 
-@include md{
+  &__media {
+    position: relative;
+    border-radius: 50px;
+    width: clamp(22.25rem, 35vw, 588px); /* 356px → 588px */
+    flex-shrink: 0;
+  }
 
-  .benefits{
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 588 / 765;
+    object-fit: cover;
+    border-radius: 50px;
+    overflow: hidden;
+  }
 
-    .box{
+  &__card {
+    position: absolute;
+    bottom: 2.1875rem; /* 35px */
+    right: 2.1875rem; /* 35px */
+    background-color: var(--color-white);
+    border-radius: 30px;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.125rem 1.5rem; /* 34px 24px */
+  }
 
-      & > img{
-        min-height: 360px;
+  &__card-number {
+    font-family: var(--font-primary);
+    font-weight: var(--font-medium);
+    font-size: 4rem; /* 64px */
+    line-height: 1.17;
+    color: var(--color-black);
+    margin-top: 13px;
+    text-align: center;
+  }
+
+  &__card-text {
+    font-family: var(--font-primary);
+    font-weight: var(--font-regular);
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.5; /* 30px */
+    color: var(--color-black);
+    text-align: center;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__subtitle {
+    font-family: var(--font-primary);
+    font-weight: var(--font-regular);
+    font-size: var(--size-h6); /* 22px */
+    line-height: 1.77; /* ~39px */
+    letter-spacing: -0.22px;
+    color: var(--color-white);
+  }
+
+  &__title {
+    font-family: var(--font-accent); /* Montserrat */
+    font-weight: var(--font-extra-bold); /* 700 */
+    font-size: 4.5rem; /* 72px */
+    line-height: 1.05;
+    letter-spacing: -3px;
+    color: var(--color-white);
+  }
+
+  &__content {
+    margin-top: 2rem; /* 32px */
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    font-weight: var(--font-regular); /* 400 */
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.6; /* 32px */
+
+    p {
+      margin-bottom: 1.7rem; /* 27px — match gap */
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
 
-    .benefits__container{
-      margin-top: 1.5rem;
-      gap: 3rem;
+    a {
+      color: var(--color-primary);
+      text-decoration: underline;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
-    .benefits-item{
-      margin-bottom: 1rem;
-      max-width: none;
+    strong, b {
+      font-weight: var(--font-extra-bold); /* 700 */
+    }
 
-      &:last-of-type{
-        margin-bottom: 1.5rem;
-      }
+    ul, ol {
+      padding-left: 1.25rem;
+      list-style-type: disc;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
     }
   }
 
+  /* Ratio modifiers */
+  &--square .content-image__img {
+    aspect-ratio: 1 / 1;
+  }
+
+  &--landscape .content-image__img {
+    aspect-ratio: 588 / 460;
+  }
+
+  /* Reversed: image right, content left */
+  &--reversed {
+    .content-image__media {
+      order: 2;
+    }
+
+    .content-image__body {
+      order: 1;
+    }
+  }
+
+  /* Responsive */
+  @include header-nav {
+    &__row {
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    &__card {
+      width: 190px;
+      border-radius: 20px;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      padding: 1.25rem 1rem;
+    }
+
+    &__card-number {
+      font-size: 2.5rem;
+    }
+
+    &__card-text {
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+  }
+
+  @include lg {
+    padding: 3.75rem 0 4.375rem;
+
+    &__subtitle {
+      font-size: var(--size-lg); /* 22 → 18px */
+    }
+
+    &__title {
+      font-size: clamp(2.55rem, 5vw, 4.875rem);
+      letter-spacing: -1px;
+    }
+
+    &__content {
+      font-size: 1.125rem; /* 20 → 18px */
+    }
+
+    &__img {
+      border-radius: 30px;
+    }
+
+    &__media {
+      border-radius: 30px;
+    }
+
+    &__card {
+      width: 170px;
+      border-radius: 18px;
+      bottom: 1rem;
+      right: 1rem;
+      padding: 1rem 0.875rem;
+    }
+
+    &__card-number {
+      font-size: 2rem;
+    }
+
+    &__card-text {
+      font-size: 0.8125rem;
+    }
+  }
+
+  @include md {
+    padding: 3rem 0;
+
+    &__row {
+      gap: 4rem;
+      flex-direction: column;
+    }
+
+    &__media {
+      width: 100%;
+      order: 2;
+    }
+
+    &__body {
+      order: 1;
+      gap: 1rem;
+    }
+
+    &__img {
+      aspect-ratio: 1 / 1;
+      max-height: 520px;
+     
+    }
+
+    &__content {
+      margin-top: 0; /* gap handles spacing in single-column */
+    }
+
+    &__title {
+      letter-spacing: -0.5px;
+    }
+
+    &__card {
+      width: 200px;
+      border-radius: 20px;
+      bottom: 1.25rem;
+      right: 1rem;
+      padding: 1.5rem 1rem;
+    }
+
+    &__card-number {
+      font-size: 2.5rem;
+    }
+
+    &__card-text {
+      font-size: 0.875rem;
+    }
+
+    /* Override reversed — always text first on mobile */
+    &--reversed .content-image__media {
+      order: 2;
+    }
+
+    &--reversed .content-image__body {
+      order: 1;
+    }
+  }
+
+  @include sm {
+    padding: 2rem 0;
+
+    &__img {
+      border-radius: var(--radius-md);
+    }
+
+    &__media {
+      border-radius: var(--radius-md);
+    }
+
+    &__card {
+      width: 150px;
+      border-radius: 16px;
+      padding: 1rem;
+      bottom: 0.75rem;
+      right: 0.75rem;
+    }
+
+    &__card-number {
+      font-size: 2rem;
+    }
+
+    &__card-text {
+      font-size: 0.8125rem;
+      line-height: 1.4;
+    }
+  }
 }

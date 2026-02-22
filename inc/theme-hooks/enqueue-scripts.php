@@ -4,8 +4,11 @@
  * Enqueue Styles
  */
 function codelibry_enqueue_styles() {
+  // Google Fonts: Montserrat, Poppins, Outfit
+  wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Outfit:wght@500&family=Poppins:wght@500;600&display=swap', [], null, 'all');
+
   $style_version = filemtime(CODELIBRY_THEME_PATH . "/dist/css/main.min.css");
-  wp_enqueue_style('main-style', CODELIBRY_THEME_URI . "/dist/css/main.min.css", [], $style_version, 'all');
+  wp_enqueue_style('main-style', CODELIBRY_THEME_URI . "/dist/css/main.min.css", ['google-fonts'], $style_version, 'all');
 }
 add_action('wp_enqueue_scripts', 'codelibry_enqueue_styles', 999999);
 

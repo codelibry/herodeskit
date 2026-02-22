@@ -8,7 +8,7 @@ const config = {
   host: process.env.FTP_HOST,
   port: 21,
   localRoot: __dirname,
-  remoteRoot: "/roman/wp-content/themes/roman",
+  remoteRoot: "/wp-content/themes/codelibry-mini-theme/",
 
   include: ["**/*"],
 

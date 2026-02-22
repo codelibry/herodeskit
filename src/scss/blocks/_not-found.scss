@@ -1,21 +1,104 @@
 .not-found {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-inline: auto;
-  max-width: 80ch;
+  min-height: inherit;
+  margin-top: 0;
+  background-color: var(--color-dark-deep);
+  padding: 2.6875rem 0 5.625rem; /* 75px / 90px */
 
-  &__content {
-    .wp-block-heading,
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1rem;
-      text-wrap: balance;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__text {
+    max-width: 702px;
+    font-family: var(--font-primary);
+    font-weight: var(--font-regular);
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.67; /* ~40px */
+
+    .h6 {
+      font-family: var(--font-primary);
+      font-weight: var(--font-black);
+      font-style: italic;
+      font-size: 4.5rem; 
+      line-height: 1.2;
+      color: var(--color-white);
+    }
+    h1 {
+      font-family: var(--font-primary);
+      font-weight: var(--font-extra-bold);
+      font-style: italic;
+      font-size: 12.5rem;
+      line-height: 1.2;
+      margin-top: 1.75rem;
+      margin-bottom: 0;
+      color: var(--color-white);
+    }
+
+    p:last-child {
+      color: rgba(255, 255, 255, 0.7);
     }
   }
 
-  &__button {
-    margin-top: 2.5rem;
-    justify-content: center;
+  &__action {
+    margin-top: 2.5rem; /* 40px */
+  }
+
+  /* Responsive */
+  @include lg {
+    &__text {
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
+
+      h1 {
+        font-size: clamp(2.5rem, 6vw, 4.625rem);
+      }
+    }
+  }
+
+  @include md {
+    padding: 3rem 0;
+
+    &__action {
+      margin-top: 2rem;
+    }
+
+    .h6{
+      font-size: 2.5rem;
+    }
+  }
+
+  @include sm {
+    padding: 2rem 0;
+  }
+}
+
+/* 404 button variant */
+.button.button--not-found {
+  --button-bg: var(--color-white);
+  --button-text: var(--color-black);
+  border: 1px solid var(--color-white);
+  border-radius: 40px;
+  min-width: 273px;
+  height: 55px;
+  padding: 0 2.5rem;
+  font-family: var(--font-primary);
+  font-weight: var(--font-medium);
+  font-size: var(--size-xl); /* 20px */
+  line-height: 30px;
+  text-transform: none;
+  justify-content: space-between;
+
+  svg {
+    width: 18px;
+    height: 12px;
+    flex-shrink: 0;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }

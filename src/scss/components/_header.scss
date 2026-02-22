@@ -1,163 +1,185 @@
 .header {
-  --header-spacing: 1rem;
+  background-color: var(--color-dark-deep);
+  padding: 1.5rem 0;
 
-  box-shadow: var(--shadow-base);
-  padding: var(--header-spacing) 0;
-  background: var(--color-light);
-  color: var(--color-dark);
+  &__bar {
+    background-color: var(--color-dark-secondary);
+    border-radius: 100px;
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
 
-  .menu {
+  &__logo {
+    flex-shrink: 0;
+
+    a {
+      display: flex;
+      align-items: center;
+      height: 41px;
+      width: fit-content;
+      text-decoration: none;
+    }
+
+    img, svg {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  &__menu {
+    flex: 1;
     display: flex;
     justify-content: center;
-    gap: 2rem;
 
-    a[aria-current="page"],
-    a:hover{
-      background-color: var(--color-primary);
-      color: var(--color-white);
-    }
+    .menu {
+      display: flex;
+      gap: 5rem;
+      align-items: center;
 
-    a{
-      display: block;
-      width: 100%;
-      padding: 0.75rem 1.25rem;
+      a {
+        color: var(--color-white);
+        font-family: var(--font-primary);
+        font-weight: var(--font-medium);
+        font-size: var(--size-h6);
+        line-height: 46px;
+        text-decoration: none;
+        white-space: nowrap;
+        letter-spacing: -0.2px;
+        transition: var(--transition-base);
 
-      font-weight: var(--font-bold);
-      font-size: var(--size-sm);
-      text-transform: uppercase;
-      text-decoration: none;
-      line-height: 1;
-    }
-
-    .menu-item-has-children {
-      position: relative;
-
-      >a {
-        padding: 0.75rem 1.75rem 0.75rem 1.25rem;
-
-        &:after {
-          content: "";
-          position: absolute;
-          right: 10px;
-          top: 10px;
-          width: 18px;
-          height: 18px;
-          background-image: url('data:image/svg+xml,<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.9483 9.16895L12.9483 15.1689L6.9483 9.16894" stroke="%23000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-          background-size: contain;
-        }
-
-        @media screen and ( min-width:  #{$breakpoint-lg}){
-
-          &:hover{
-
-            &:after {
-              transform: rotateX(180deg);
-              filter: invert(100%);
-            }
-          }
+        &:hover,
+        &[aria-current="page"] {
+          opacity: 0.8;
         }
       }
 
-      &.menu-open {
+      .menu-item-has-children {
+        position: relative;
 
-        >a {
+        > a {
+          padding-right: 1.25rem;
 
-          @media screen and ( min-width:  #{$breakpoint-lg}){
-            color: var(--color-white);
-            background-color: var(--color-primary);
-          }
-
-          &:after {
-              transform: rotateX(180deg);
-              filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(217deg) brightness(103%) contrast(102%);
-          }
-
-          @media screen and ( min-width:  #{$breakpoint-lg}){
-            &:after {
-              transform: rotateX(180deg);
-              filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(217deg) brightness(103%) contrast(102%);
-            }
+          &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 14px;
+            background-image: url('data:image/svg+xml,<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.9483 9.16895L12.9483 15.1689L6.9483 9.16894" stroke="%23FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: var(--transition-base);
           }
         }
 
+        &.menu-open > a::after {
+          transform: translateY(-50%) rotateX(180deg);
+        }
       }
-    }
 
-    .sub-menu {
-      display: none;
-
-      max-height: 16rem;
-      overflow-y: auto;
-      background-color: var(--color-secondary);
-
-      @media screen and ( min-width:  #{$breakpoint-lg}){
+      .sub-menu {
+        display: none;
         position: absolute;
-        top: 57px;
-        left: -40px;
+        top: 100%;
+        left: 0;
         z-index: 999;
+        min-width: 12rem;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+        background-color: var(--color-dark-secondary);
+        border-radius: var(--radius-sm);
+        box-shadow: var(--shadow-base);
 
-        min-width: 15rem;
-      }
-
-      &.open {
+        a {
           display: block;
+          padding: 0.5rem 1.25rem;
+          font-size: var(--size-lg);
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            opacity: 1;
+          }
+        }
+
+        &.open {
+          display: block;
+        }
       }
     }
   }
 
-  .header__mobile-menu-button{
-
-    svg{
-      width: 25px;
-      height: 25px;
-    }
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
   }
 
-  &__inner {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1.5fr 1fr 1.5fr;
+  /* Hidden by default, shown at header-nav breakpoint */
+  &__mobile-menu {
+    display: none;
   }
 
   &__mobile-menu-button {
     @include reset-button;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-  } 
+    justify-content: center;
+    color: var(--color-white);
 
-  &__logo {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    a {
-      height: clamp(1rem, 2.2vw, 2rem);
-      width: fit-content;
-    }
-
-    img, svg {
-      height: 100%;
-      width: fit-content;
+    svg {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
     }
   }
 
-  &__search > a {
-    display: flex;
-    align-items: center;
+  @include xl {
+    &__menu .menu {
+      gap: 3rem;
+    }
   }
-  
+
+  /* 1130px — switch to burger */
+  @include header-nav {
+    &__menu {
+      display: none;
+    }
+
+    &__cta.button {
+      display: none;
+    }
+
+    &__mobile-menu {
+      display: block;
+    }
+  }
+
   @include lg {
-    &__logo {
-      justify-content: center;
+    &__bar {
+      padding: 1rem 1.5rem;
+    }
+
+    &__logo a {
+      height: 32px;
     }
   }
 
   @include sm {
-    &__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    padding: 1rem 0;
+
+    &__bar {
+      border-radius: var(--radius-lg);
+      padding: 0.75rem 1rem;
+    }
+
+    &__logo a {
+      height: 28px;
     }
   }
 }

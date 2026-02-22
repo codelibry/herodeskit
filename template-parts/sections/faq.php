@@ -1,17 +1,9 @@
 <?php
 
-if (isset($args['is_example'])){
-    $faq_subtitle = $args['faq__faq-subtitle'];
-    $faq_title = $args['faq__faq-title'];
-    $faq_image = $args['faq__faq-image'];
-    $faq_list = $args['faq__faq-list'];
-}
-else{
-    $faq_subtitle = get('faq__faq-subtitle');
-    $faq_title = get('faq__faq-title');
-    $faq_image = get('faq__faq-image');
-    $faq_list = get('faq__faq-list');
-}
+$faq_subtitle = $args['faq__faq-subtitle'] ?? get_sub_field('faq__faq-subtitle');
+$faq_title = $args['faq__faq-title'] ?? get_sub_field('faq__faq-title');
+$faq_image = $args['faq__faq-image'] ?? get_sub_field('faq__faq-image');
+$faq_list = $args['faq__faq-list'] ?? get_sub_field('faq__faq-list');
 
 if(empty($faq_list)) {
     return;

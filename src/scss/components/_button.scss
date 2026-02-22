@@ -4,8 +4,8 @@
 
 @mixin button {
   --button-min-width: 4rem;
-  --button-bg: var(--color-primary);
-  --button-text: var(--color-white);
+  --button-bg: var(--color-gray);
+  --button-text: var(--color-dark-deep);
   --button-x-padding: 1.5rem;
   --button-y-padding: 1rem;
   --button-gap: 0.5ch;
@@ -53,4 +53,17 @@ input[type="submit"] {
   --button-bg: rgba(255, 255, 255, 0.8);
   --button-text: var(--color-dark);
   --focus-color: var(--color-dark);
+}
+
+.button.button--header {
+  --button-bg: var(--color-white);
+  --button-text: var(--color-black);
+  letter-spacing: -0.2px;
+  border: none;
+  border-radius: 30px;
+  padding: 0.9375rem 1.875rem;
+  font-family: var(--font-primary);
+  font-weight: var(--font-medium);
+  font-size: var(--size-xl);
+  text-transform: none;
 }

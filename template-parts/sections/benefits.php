@@ -1,19 +1,10 @@
 <?php
 
-if (isset($args['is_example'])){
-    $benefits_subtitle = $args['benefits-subtitle'];
-    $benefits_title = $args['benefits-title'];
-    $benefits_image = $args['benefits-image'];
-    $benefits_list = $args['benefits_content-list'];
-    $button = $args['benefits-button'];
-}
-else{
-    $benefits_subtitle = get('benefits-subtitle');
-    $benefits_title = get('benefits-title');
-    $benefits_image = get('benefits-image');
-    $benefits_list = get('benefits_content-list');
-    $button = get('benefits-button');
-}
+$benefits_subtitle = $args['benefits-subtitle'] ?? get_sub_field('benefits-subtitle');
+$benefits_title = $args['benefits-title'] ?? get_sub_field('benefits-title');
+$benefits_image = $args['benefits-image'] ?? get_sub_field('benefits-image');
+$benefits_list = $args['benefits_content-list'] ?? get_sub_field('benefits_content-list');
+$button = $args['benefits-button'] ?? get_sub_field('benefits-button');
 
 if(empty($benefits_list)) {
     return;

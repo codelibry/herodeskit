@@ -25,3 +25,8 @@
   @include container;
   max-width: var(--container-lg);
 }
+
+.container-xl {
+  @include container;
+  max-width: var(--container-xl);
+}

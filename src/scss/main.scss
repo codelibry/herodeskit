@@ -42,18 +42,27 @@
 @import "components/accordion";
 @import "components/accordion-secondary";
 @import "components/popup";
+@import "components/news-card";
 
 /*
  * Blocks
  */
 @import "blocks/not-found";
 @import "blocks/hero";
+@import "blocks/hero-about";
 @import "blocks/faq-about";
 @import "blocks/banner-slider";
 @import "blocks/benefits";
 @import "blocks/content-image";
 @import "blocks/testimonials";
 @import "blocks/our-advantages";
+@import "blocks/team-members";
+@import "blocks/cta-banner";
+@import "blocks/contact-form";
+@import "blocks/news-cards";
+@import "blocks/services";
+@import "blocks/services-slider";
+@import "blocks/testimonials-v2";
 
 /*
  * Utilities
@@ -65,6 +74,7 @@
  * Pages
  */
 @import "pages/singular-page";
+@import "pages/news-archive";
 
 // 404
 @import "pages/not-found";

@@ -1,65 +1,83 @@
 <?php
 
-// ACF Options
-$footer_description = get('footer__description', $options = true);
+$footer_description  = get('footer__description', $options = true);
 $footer_company_name = get('footer__company-name', $options = true);
-
-// get all menu locations
-$locations = get_nav_menu_locations();
-
-// filter to get only footer menus
-$locations = array_filter($locations, fn($location) => str_contains($location, 'footer-menu'), ARRAY_FILTER_USE_KEY);
-$locations = array_filter($locations, fn($location) => $location !== 0);
-
-// create array menus to render in html
-$menus = array_map(function($menu_id, $location) {
-	$menu = wp_get_nav_menu_object($menu_id);
-
-	return [
-		'title' => $menu->name ?? 'Menu Title',
-		'menu' => wp_nav_menu([
-			'theme_location' => $location,
-			'echo' => false,
-		])
-	];
-}, $locations, array_keys($locations), array_values($locations));
+$footer_email        = get('footer__email', $options = true);
+$footer_phone        = get('footer__phone', $options = true);
+$footer_socials      = get('footer__socials', $options = true);
 
 ?>
 
 <footer class="footer" id="footer">
-	<div class="container">
-    <div class="footer__inner | flow">
-      <div class="footer__main | repel">
-        <div class="footer__info | flow">
-          <a href="<?php echo home_url() ?>" class="footer__logo">
-            <?php echo get_inline_svg('logo') ?>
-            <span class="visually-hidden"><?php esc_html_e('Go to homepage', 'codelibry') ?></span>
-          </a>
+    <div class="container">
+        <div class="footer__inner">
 
-          <?php if($footer_description): ?>
-            <div class="footer__description | flow">
-              <?php echo wpautop($footer_description) ?>
+            <div class="footer__brand">
+                <div class="footer__brand-top">
+                    <a href="<?php echo home_url(); ?>" class="footer__logo">
+                        <?php echo get_inline_svg('logo'); ?>
+                        <span class="visually-hidden"><?php esc_html_e('Go to homepage', 'codelibry'); ?></span>
+                    </a>
+
+                    <?php if ($footer_description): ?>
+                        <p class="footer__description">
+                            <?php echo esc_html($footer_description); ?>
+                        </p>
+                    <?php endif; ?>
+                </div>
+
+                <?php if ($footer_company_name): ?>
+                    <p class="footer__copyright">
+                        &copy; <?php echo date('Y'); ?> <?php echo esc_html($footer_company_name); ?>. All rights reserved.
+                    </p>
+                <?php endif; ?>
             </div>
-          <?php endif; ?>
-        </div>
 
-        <div class="footer__menu-wrapper | cluster">
-          <?php foreach ($menus as $menu): ?>
-            <div class="footer__column | flow">
-              <h4 class="h5">
-                <?php echo $menu['title'] ?>
-              </h4>
-              <?php echo $menu['menu'] ?>
+            <div class="footer__columns">
+                <nav class="footer__nav">
+                    <?php
+                    wp_nav_menu([
+                        'theme_location' => 'footer-menu-1',
+                        'container'      => false,
+                        'fallback_cb'    => false,
+                        'depth'          => 1,
+                    ]);
+                    ?>
+                </nav>
+
+                <div class="footer__contacts">
+                    <div class="footer__contacts-info">
+                        <?php if ($footer_email): ?>
+                            <a href="mailto:<?php echo esc_attr($footer_email); ?>" class="footer__contact-link">
+                                <?php echo esc_html($footer_email); ?>
+                            </a>
+                        <?php endif; ?>
+
+                        <?php if ($footer_phone): ?>
+                            <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9+]/', '', $footer_phone)); ?>" class="footer__contact-link">
+                                <?php echo esc_html($footer_phone); ?>
+                            </a>
+                        <?php endif; ?>
+                    </div>
+
+                    <?php if ($footer_socials): ?>
+                        <div class="footer__socials">
+                            <?php foreach ($footer_socials as $social): ?>
+                                <?php if (!empty($social['link'])): ?>
+                                    <a href="<?php echo esc_url($social['link']); ?>" class="footer__social" target="_blank" rel="noopener noreferrer">
+                                        <?php if (!empty($social['icon'])): ?>
+                                            <?php echo wp_get_attachment_image($social['icon'], 'thumbnail', false, [
+                                                'class' => 'footer__social-icon',
+                                            ]); ?>
+                                        <?php endif; ?>
+                                    </a>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
-          <?php endforeach; ?>
-        </div>
-      </div>
 
-      <div class="footer__bottom | repel">
-        <p class="footer__copyright">
-          <?php echo date('Y') ?> © <?php echo $footer_company_name ?>
-        </p>
-        <div class="cluster"></div>
-      </div>
-	</div>
+        </div>
+    </div>
 </footer>

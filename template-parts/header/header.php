@@ -1,14 +1,26 @@
 <header class="header">
-    <div class="header__inner | container-lg">
+    <div class="container-xl">
+        <div class="header__bar">
 
-        <!-- Mobile Menu -->
-        <?php get_template_part('template-parts/header/mobile-menu') ?>
+            <!-- Logo -->
+            <?php get_template_part('template-parts/header/logo') ?>
 
-        <!-- Logo -->
-        <?php get_template_part('template-parts/header/logo') ?>
+            <!-- Desktop Menu -->
+            <?php get_template_part('template-parts/header/menu') ?>
 
-        <!-- Menu -->
-        <?php get_template_part('template-parts/header/menu') ?>
+            <!-- Actions -->
+            <div class="header__actions">
+                <?php
+                $header_button = get('header__button', true);
+                if ($header_button): ?>
+                    <a class="button button--header header__cta" href="<?php echo $header_button['url'] ?>">
+                        <?php echo $header_button['title'] ?>
+                    </a>
+                <?php endif; ?>
 
+                <?php get_template_part('template-parts/header/mobile-menu') ?>
+            </div>
+
+        </div>
     </div>
 </header>

@@ -1,15 +1,8 @@
 <?php
 
-if (isset($args['is_example'])){
-    $subtitle = $args['advantages_subtitle'];
-    $title = $args['advantages_title'];
-    $list = $args['advantages_list'];
-}
-else{
-    $subtitle = get('advantages_subtitle');
-    $title = get('advantages_title');
-    $list = get('advantages_list');
-}
+$subtitle = $args['advantages_subtitle'] ?? get_sub_field('advantages_subtitle');
+$title = $args['advantages_title'] ?? get_sub_field('advantages_title');
+$list = $args['advantages_list'] ?? get_sub_field('advantages_list');
 
 
 if(empty($list)) {

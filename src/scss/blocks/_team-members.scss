@@ -1,0 +1,98 @@
+.team-members {
+  background-color: var(--color-dark-deep);
+  padding: 5.625rem 0; /* 90px */
+
+  &__title {
+    font-family: var(--font-accent);
+    font-weight: var(--font-extra-bold);
+    font-size: 4.5rem; /* 72px */
+    line-height: 1.03;
+    letter-spacing: -2px;
+    color: var(--color-white);
+    text-align: center;
+    max-width: 686px;
+    margin: 0 auto 3.75rem; /* 60px */
+  }
+
+  &__grid {
+    --grid-placement: auto-fit;
+    --grid-min-item-size: clamp(20rem, 31%, 27.125rem); /* 320px → 434px */
+    --gap: 2.5rem;
+  }
+
+  &__card {
+    text-align: center;
+  }
+
+  &__media {
+    overflow: hidden;
+    border-radius: 50px;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 434 / 500;
+    object-fit: cover;
+    border-radius: 50px;
+  }
+
+  &__info {
+    margin-top: 1.5rem; /* 24px */
+    max-width: 17rem;
+    margin-inline: auto;
+  }
+
+  &__name {
+    font-family: var(--font-primary);
+    font-weight: var(--font-bold);
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.08;
+    color: var(--color-white);
+  }
+
+  &__position {
+    font-family: var(--font-primary);
+    font-weight: var(--font-regular);
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.5; /* 30px */
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.25rem;
+  }
+
+  /* Responsive */
+  @include lg {
+    padding: 3.75rem 0;
+
+    &__title {
+      font-size: clamp(2.55rem, 5vw, 4.5rem);
+      letter-spacing: -1px;
+      margin-bottom: 2.5rem;
+    }
+
+    &__img {
+      border-radius: 30px;
+    }
+
+    &__media {
+      border-radius: 30px;
+    }
+  }
+
+  @include sm {
+    padding: 2rem 0;
+
+    &__img {
+      border-radius: var(--radius-md);
+    }
+
+    &__media {
+      border-radius: var(--radius-md);
+    }
+
+    &__title {
+      margin-bottom: 2rem;
+    }
+  }
+}

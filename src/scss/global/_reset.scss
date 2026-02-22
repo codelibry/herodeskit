@@ -42,6 +42,10 @@ body {
   line-height: 1.5;
 }
 
+section {
+   margin-top: -1px;
+}
+
 /* Set shorter line heights on headings and interactive elements */
 h1,
 h2,
@@ -58,13 +62,17 @@ h1,
 h2,
 h3,
 h4 {
-  text-wrap: balance;
+  //text-wrap: balance;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
   color: currentColor;
+}
+
+a{
+  text-decoration: none;
 }
 
 /* Make images easier to work with */

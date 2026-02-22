@@ -1,0 +1,160 @@
+.cta-banner {
+  background-color: var(--color-dark-deep);
+  padding: 5.625rem 0; /* 90px */
+
+  &__inner {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    background-color: var(--color-dark);
+    padding: 5.75rem 5rem; /* 92px / 80px */
+  }
+
+  &__mesh {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem; /* 40px */
+    text-align: center;
+  }
+
+  &__title {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-bold);
+    font-size: 4.5rem; /* 72px */
+    line-height: 1.06; /* ~76px */
+    letter-spacing: -1px;
+    color: var(--color-white);
+    max-width: 1206px;
+  }
+
+  &__description {
+    font-family: var(--font-primary);
+    font-weight: var(--font-regular);
+    font-size: 1.75rem; /* 28px */
+    line-height: 1.43; /* ~40px */
+    color: var(--color-white);
+    max-width: 991px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1.125rem; /* 18px */
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Responsive */
+  @include lg {
+    padding: 3.75rem 0;
+
+    &__inner {
+      padding: 4rem 3rem;
+    }
+
+    &__title {
+      font-size: clamp(2.55rem, 5vw, 4.5rem);
+    }
+
+    &__description {
+      font-size: clamp(1.125rem, 2.5vw, 1.75rem);
+    }
+  }
+
+  @include md {
+    padding: 3rem 0;
+
+    &__inner {
+      padding: 3rem 1.5rem;
+      border-radius: var(--radius-lg);
+    }
+
+    &__content {
+      gap: 1.5rem;
+    }
+
+    &__title {
+      font-size: 1.625rem;
+      letter-spacing: -0.5px;
+    }
+
+    &__description {
+      font-size: 1.125rem;
+    }
+
+    &__actions .button:first-child {
+      font-size: 1rem;
+      padding: 0.75rem 1.25rem;
+    }
+
+    &__actions .button {
+      font-size: 1rem;
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  @include sm {
+    padding: 2rem 0;
+
+    &__inner {
+      padding: 2.5rem 1.25rem;
+      border-radius: var(--radius-md);
+    }
+  }
+}
+
+/* CTA button variants */
+.button.button--cta-primary {
+  --button-bg: var(--color-white);
+  --button-text: var(--color-black);
+  border: none;
+  border-radius: 50px;
+  padding: 1.25rem 2.375rem;
+  font-family: var(--font-secondary);
+  font-weight: var(--font-medium);
+  font-size: var(--size-xl); /* 20px */
+  text-transform: none;
+  letter-spacing: -0.5px;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.button.button--cta-outline {
+  --button-bg: transparent;
+  --button-text: var(--color-white);
+  border: 1.2px solid var(--color-white);
+  border-radius: 50px;
+  padding: 1.25rem 2.375rem;
+  font-family: var(--font-secondary);
+  font-weight: var(--font-medium);
+  font-size: var(--size-xl); /* 20px */
+  text-transform: none;
+  letter-spacing: -0.5px;
+
+  @media (hover: hover) {
+    &:hover {
+      --button-bg: var(--color-white);
+      --button-text: var(--color-black);
+      opacity: 1;
+    }
+  }
+}

@@ -3,12 +3,19 @@
  */
 
 $breakpoint-xl: 1200px;
+$breakpoint-header-nav: 1130px;
 $breakpoint-lg: 991px;
 $breakpoint-md: 768px;
 $breakpoint-sm: 390px;
 
 @mixin xl {
   @media (max-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}
+
+@mixin header-nav {
+  @media (max-width: #{$breakpoint-header-nav}) {
     @content;
   }
 }

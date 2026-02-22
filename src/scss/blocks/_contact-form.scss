@@ -1,0 +1,184 @@
+.contact-form {
+  background-color: var(--color-dark-deep);
+  padding-bottom: 90px;
+
+  &__hero {
+    padding: 4.6875rem 0 0; /* 75px */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-family: var(--font-primary);
+    font-weight: var(--font-extra-bold);
+    font-size: 4.875rem; /* 78px */
+    line-height: 1;
+    letter-spacing: -0.78px;
+    color: var(--color-white);
+  }
+
+  &__subtitle {
+    margin-top: 1.5rem; /* 24px */
+    font-family: var(--font-primary);
+    font-weight: var(--font-regular);
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.5; /* 36px */
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 955px;
+  }
+
+  &__body {
+    margin-top: 2.5rem;
+    background-color: var(--color-dark);
+    border-radius: 50px;
+    padding: 3.5rem; /* 56px */
+    max-width: 1419px;
+    margin-inline: auto;
+  }
+
+  /* CF7 form overrides */
+  &__body .wpcf7-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; /* 40px */
+  }
+
+  &__body .wpcf7-form p {
+    margin: 0;
+  }
+
+  &__body .wpcf7-form label {
+    display: block;
+    font-family: var(--font-primary);
+    font-weight: var(--font-regular);
+    font-size: var(--size-md); /* 16px */
+    color: var(--color-white);
+    opacity: 0.5;
+    margin-bottom: 0;
+  }
+
+  &__body .wpcf7-form input[type="text"],
+  &__body .wpcf7-form input[type="email"],
+  &__body .wpcf7-form input[type="tel"],
+  &__body .wpcf7-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.16);
+    border-radius: 0;
+    padding: 0.5rem 0 1rem;
+    font-family: var(--font-primary);
+    font-weight: var(--font-medium);
+    font-size: var(--size-xl); /* 20px */
+    color: var(--color-white);
+    outline: none;
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    &:focus {
+      border-bottom-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__body .wpcf7-form textarea {
+    height: 8.5rem;
+    resize: none;
+  }
+
+  &__body .wpcf7-form input[type="submit"] {
+    width: 100%;
+    height: 70px;
+    background: var(--color-white);
+    color: var(--color-black);
+    border: none;
+    border-radius: 100px;
+    font-family: var(--font-primary);
+    font-weight: var(--font-extra-bold);
+    font-size: var(--size-lg); /* 18px */
+    cursor: pointer;
+    transition: var(--transition-base);
+    text-transform: none;
+    padding: 0;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  /* CF7 validation messages */
+  &__body .wpcf7-not-valid-tip {
+    color: var(--color-error);
+    font-size: var(--size-sm);
+    margin-top: 0.25rem;
+  }
+
+  &__body .wpcf7-response-output {
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    text-align: center;
+    font-size: var(--size-md);
+    margin: 0;
+  }
+
+  /* Responsive */
+  @include lg {
+    &__hero {
+      padding-top: 3.75rem;
+    }
+
+    &__title {
+      font-size: clamp(2.55rem, 6vw, 4.875rem);
+    }
+
+    &__subtitle {
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
+    }
+
+    &__body {
+      padding: 2.5rem;
+      border-radius: var(--radius-xl);
+    }
+  }
+
+  @include md {
+    &__hero {
+      padding-top: 3rem;
+    }
+
+    &__body {
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius-lg);
+      margin-top: 2rem;
+    }
+
+    &__body .wpcf7-form {
+      gap: 2rem;
+    }
+  }
+
+  @include sm {
+    &__hero {
+      padding-top: 2rem;
+    }
+
+    &__body {
+      padding: 1.5rem 1.25rem;
+      border-radius: var(--radius-md);
+    }
+
+    &__body .wpcf7-form {
+      gap: 1rem;
+    }
+
+    &__body .wpcf7-form input[type="submit"] {
+      height: 56px;
+    }
+  }
+}

@@ -1,0 +1,354 @@
+.testimonials-v2 {
+  background-color: var(--color-dark-deep);
+  padding: 5.625rem 0; /* 90px */
+  overflow: hidden;
+
+  &__title {
+    font-family: var(--font-accent); /* Montserrat */
+    font-weight: var(--font-extra-bold);
+    font-size: 4.5rem; /* 72px */
+    line-height: 1; /* 72px */
+    letter-spacing: -2px;
+    color: var(--color-white);
+    text-align: center;
+    max-width: 1278px;
+    margin-inline: auto;
+    padding: 0 1rem;
+  }
+
+  /* Carousel */
+  &__carousel {
+    margin-top: 5rem; /* 80px */
+
+    .swiper {
+      overflow: visible;
+    }
+
+    .swiper-slide {
+      width: 710px;
+      height: auto;
+    }
+  }
+
+  /* Card */
+  &__card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-dark);
+    border-radius: 50px;
+    padding: 3.4375rem 4.75rem 3.4375rem 4.625rem; /* 55px 76px 55px 74px */
+  }
+
+  &__avatar {
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+
+    svg,
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text-wrap {
+    margin-top: auto;
+    padding-top: 2rem;
+  }
+
+  &__text {
+    font-family: var(--font-primary);
+    font-weight: var(--font-medium);
+    font-style: italic;
+    font-size: 2.25rem; /* 36px */
+    line-height: 1.472; /* 53px */
+    color: var(--color-white);
+  }
+
+  &__read-more {
+    display: inline;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 0.5rem;
+    font-family: var(--font-primary);
+    font-weight: var(--font-medium);
+    font-style: italic;
+    font-size: 2.25rem; /* match text */
+    line-height: 1.472;
+    color: var(--color-white);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__author {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 2.5rem;
+  }
+
+  &__author-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-family: var(--font-primary);
+    font-weight: var(--font-medium);
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.5; /* 36px */
+    color: var(--color-white);
+  }
+
+  &__location {
+    font-family: var(--font-primary);
+    font-weight: var(--font-regular);
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.8; /* 36px */
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  &__rating {
+    display: flex;
+    gap: 0.25rem; /* 4px */
+    align-items: center;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  /* Google badge */
+  &__badge {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem; /* 80px */
+    padding: 0 1rem;
+  }
+
+  &__badge-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background-color: var(--color-white);
+    border-radius: 100px;
+    padding: 0.75rem 1.5rem 0.75rem 0.75rem; /* 12px 24px 12px 12px */
+  }
+
+  &__google-icon {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__badge-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* 8px */
+    width: 151px;
+  }
+
+  &__badge-label {
+    font-family: var(--font-primary);
+    font-weight: var(--font-extra-bold);
+    font-size: 1.125rem; /* 18px */
+    line-height: 1;
+    letter-spacing: -0.5px;
+    color: var(--color-black);
+    text-transform: uppercase;
+  }
+
+  &__badge-stars {
+    display: flex;
+    gap: 0.1875rem; /* 3px */
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__badge-count {
+    font-family: var(--font-primary);
+    font-weight: var(--font-medium);
+    font-size: 1.125rem; /* 18px */
+    line-height: 1;
+    letter-spacing: -0.5px;
+    color: var(--color-black);
+  }
+
+  /* Responsive */
+  @include xl {
+    &__title {
+      font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+    }
+
+    &__carousel .swiper-slide {
+      width: 560px;
+    }
+
+    &__card {
+      padding: 2.5rem 3rem;
+      border-radius: var(--radius-xl);
+    }
+
+    &__text {
+      font-size: 1.75rem;
+      line-height: 1.4;
+    }
+
+    &__read-more {
+      font-size: 1.75rem;
+      line-height: 1.4;
+    }
+  }
+
+  @include lg {
+    padding: 3.75rem 0;
+
+    &__carousel {
+      margin-top: 3rem;
+    }
+
+    &__carousel .swiper-slide {
+      width: 480px;
+    }
+
+    &__card {
+      padding: 2rem 2.5rem;
+      border-radius: var(--radius-lg);
+    }
+
+    &__avatar {
+      width: 48px;
+      height: 48px;
+    }
+
+    &__text {
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+
+    &__read-more {
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+
+    &__name {
+      font-size: 1.25rem;
+    }
+
+    &__location {
+      font-size: 1rem;
+    }
+
+    &__badge {
+      margin-top: 3rem;
+    }
+  }
+
+  @include md {
+    padding: 3rem 0;
+
+    &__carousel .swiper-slide {
+      width: 380px;
+    }
+
+    &__card {
+      padding: 1.5rem 2rem;
+      border-radius: var(--radius-md);
+    }
+
+    &__avatar {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__text {
+      font-size: 1.25rem;
+    }
+
+    &__read-more {
+      font-size: 1.25rem;
+    }
+
+    &__author {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    &__google-icon {
+      width: 56px;
+      height: 56px;
+    }
+
+    &__badge-info {
+      width: auto;
+    }
+
+    &__badge-label,
+    &__badge-count {
+      font-size: 1rem;
+    }
+  }
+
+  @include sm {
+    padding: 2.5rem 0;
+
+    &__carousel .swiper-slide {
+      width: 320px;
+    }
+
+    &__card {
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius-sm);
+    }
+
+    &__text {
+      font-size: 1.125rem;
+    }
+
+    &__read-more {
+      font-size: 1.125rem;
+    }
+
+    &__name {
+      font-size: 1.125rem;
+    }
+
+    &__google-icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    &__badge-inner {
+      padding: 0.5rem 1rem 0.5rem 0.5rem;
+    }
+
+    &__badge-label,
+    &__badge-count {
+      font-size: 0.875rem;
+    }
+  }
+}

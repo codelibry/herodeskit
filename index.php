@@ -1,4 +1,6 @@
-<?php get_header();?>
-
-
-<?php get_footer();?>
+<?php
+/**
+ * Fallback template — redirects to home.php logic.
+ */
+get_header();
+get_footer();

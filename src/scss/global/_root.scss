@@ -9,45 +9,64 @@
   /*
    * Colors
    */
-  --color-black: #000000;     /* Just pure black color */
-  --color-white: #FFFFFF;     /* Just pure white color */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
 
-  --color-dark: #121212;      /* Usually used for text color (or opposite) */
-  --color-light: #FFF7E9;     /* Usually used for background color (or opposite) */
+  --color-dark: #1D1D1D;
+  --color-dark-deep: #0B0A0A;
+  --color-dark-secondary: #1D1B1B;
+  --color-dark-alt: #111111;
 
-  --color-primary: #AE8F55;   /* Accent color. Usually button's bg color */
-  --color-secondary: #FFEECE; /* Secondary main color. Sometimes is absent */
+  --color-light: #F2F2F2;
 
-  --color-success: green;
-  --color-warning: yellow;
-  --color-error: red;
+  --color-primary: #FFFFFF;
+
+  --color-gray: #AAAAAA;
+  --color-gray-light: #C2C2C2;
+  --color-gray-lighter: #D9D9D9;
+
+  --color-success: #43A047;
+  --color-warning: #FFC107;
+  --color-error: #F44336;
+  --color-info: #448AFF;
+
+  --color-pink: #FF63CE;
+  --color-green: #A8E461;
+  --color-blue: #6F7BFF;
+  --color-cyan: #29D8E5;
+  --color-coral: #FF6C6E;
 
 
   /*
    * Font Sizes
    */
-  --size-h1: clamp(3.375rem, 6vw, 4.5rem);   /* 54px → 72px */
-  --size-h2: clamp(2.5rem, 4.5vw, 3.375rem); /* 40px → 54px */
-  --size-h3: clamp(2.125rem, 3.5vw, 2.5rem); /* 34px → 40px */
-  --size-h4: clamp(1.375rem, 3vw, 2.125rem); /* 22px → 34px */
-  --size-h5: 1.375rem;                       /* 22px */
-  --size-h6: 1.125rem;                       /* 18px */
+  --size-h1: clamp(4.5rem, 6vw, 6.25rem);       /* 72px → 100px */
+  --size-h2: clamp(3.25rem, 5vw, 4.875rem);      /* 52px → 78px */
+  --size-h3: clamp(2.25rem, 4vw, 4rem);          /* 36px → 64px */
+  --size-h4: clamp(1.75rem, 3vw, 2.625rem);      /* 28px → 42px */
+  --size-h5: clamp(1.5rem, 2vw, 2rem);           /* 24px → 32px */
+  --size-h6: 1.375rem;                           /* 22px */
 
-  --size-md: 1rem;                           /* 16px */
-  --size-sm: 0.875rem;                       /* 14px */
-  --size-xs: 0.75rem;                        /* 12px */
+  --size-xl: 1.25rem;                            /* 20px */
+  --size-lg: 1.125rem;                           /* 18px */
+  --size-md: 1rem;                               /* 16px */
+  --size-sm: 0.9375rem;                          /* 15px */
+  --size-xs: 0.875rem;                           /* 14px */
 
 
   /*
    * Font Families
    */
-  --font-primary: 'Inter', sans-serif;
-  --font-secondary: 'Inter', sans-serif;
+  --font-primary: 'Satoshi', sans-serif;
+  --font-secondary: 'Poppins', sans-serif;
+  --font-accent: 'Montserrat', sans-serif;
+  --font-display: 'Outfit', sans-serif;
 
 
   /*
    * Font Weights
    */
+  --font-black: 900;
   --font-extra-bold: 700;
   --font-bold: 600;
   --font-medium: 500;
@@ -66,19 +85,20 @@
   /*
    * Containers Width
    */
-  --container-sm: 980px;    /* Used for Content Pages ("Privacy Policy", "Cookie Policy") */
-  --container-md: 1200px;   /* The most common container width */
-  --container-lg: 1300px;   /* Can be used for wider Header or Footer */
+  --container-sm: 1012px;    /* Used for Content Pages ("Privacy Policy", "Cookie Policy") */
+  --container-md: 1452px;   /* The most common container width */
+  --container-lg: 1632px;   /* Wider container */
+  --container-xl: 1762px;   /* Full-width container */
 
 
   /*
    * Border Radius
-   */ 
-  --radius-xs: 8px; 
-  --radius-sm: 12px; 
-  --radius-md: 16px; 
-  --radius-lg: 24px; 
-  --radius-xl: 40px; 
+   */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 40px;
 
 
   /*
