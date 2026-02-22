@@ -1,3 +1,4 @@
+import Skeleton from './js/skeleton.js';
 import InitPopups from './js/popup.js';
 import MobileMenu from './js/mobile-menu.js';
 import BannerSlider from './js/banner-slider.js';
@@ -16,6 +17,7 @@ import './scss/main.scss';
  */
 document.addEventListener('DOMContentLoaded', () => {
 
+  Skeleton();
   InitPopups();
   MobileMenu();
   BannerSlider();
