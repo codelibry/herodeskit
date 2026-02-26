@@ -5,7 +5,7 @@
   &__bar {
     background-color: var(--color-dark-secondary);
     border-radius: 100px;
-    padding: 1.5rem 2.5rem;
+    padding: 1.25rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,7 +20,7 @@
     a {
       display: flex;
       align-items: center;
-      height: 41px;
+      height: 34px;
       width: fit-content;
       text-decoration: none;
     }
@@ -40,7 +40,7 @@
 
     .menu {
       display: flex;
-      gap: 5rem;
+      gap: 3.5rem;
       align-items: center;
 
       a {
@@ -48,7 +48,7 @@
         font-family: var(--font-primary);
         font-weight: var(--font-medium);
         font-size: var(--size-h6);
-        line-height: 46px;
+        line-height: 38px;
         text-decoration: none;
         white-space: nowrap;
         letter-spacing: -0.2px;

@@ -1,17 +1,17 @@
 .team-members {
   background-color: var(--color-dark-deep);
-  padding: 5.625rem 0; /* 90px */
+  padding: 4.5rem 0; /* 72px */
 
   &__title {
     font-family: var(--font-accent);
     font-weight: var(--font-extra-bold);
-    font-size: 4.5rem; /* 72px */
+    font-size: 3.5rem; /* 56px */
     line-height: 1.03;
     letter-spacing: -2px;
     color: var(--color-white);
     text-align: center;
-    max-width: 686px;
-    margin: 0 auto 6.125rem; /* 98px */
+    max-width: 550px;
+    margin: 0 auto 4.5rem; /* 72px */
   }
 
   &__grid {
@@ -26,7 +26,7 @@
 
   &__media {
     overflow: hidden;
-    border-radius: 50px;
+    border-radius: 40px;
   }
 
   &__img {
@@ -35,7 +35,7 @@
     height: auto;
     aspect-ratio: 434 / 500;
     object-fit: cover;
-    border-radius: 50px;
+    border-radius: 40px;
   }
 
   &__info {
@@ -47,7 +47,7 @@
   &__name {
     font-family: var(--font-primary);
     font-weight: var(--font-bold);
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.25rem; /* 20px */
     line-height: 1.08;
     color: var(--color-white);
   }
@@ -55,8 +55,8 @@
   &__position {
     font-family: var(--font-primary);
     font-weight: var(--font-regular);
-    font-size: 1.25rem; /* 20px */
-    line-height: 1.5; /* 30px */
+    font-size: 1rem; /* 16px */
+    line-height: 1.5; /* 24px */
     color: rgba(255, 255, 255, 0.5);
     margin-top: 0.25rem;
   }

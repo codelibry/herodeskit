@@ -40,18 +40,18 @@
   /*
    * Font Sizes
    */
-  --size-h1: clamp(4.5rem, 6vw, 6.25rem);       /* 72px → 100px */
-  --size-h2: clamp(3.25rem, 5vw, 4.875rem);      /* 52px → 78px */
-  --size-h3: clamp(2.25rem, 4vw, 4rem);          /* 36px → 64px */
-  --size-h4: clamp(1.75rem, 3vw, 2.625rem);      /* 28px → 42px */
-  --size-h5: clamp(1.5rem, 2vw, 2rem);           /* 24px → 32px */
-  --size-h6: 1.375rem;                           /* 22px */
+  --size-h1: clamp(3.5rem, 5vw, 5rem);            /* 56px → 80px */
+  --size-h2: clamp(2.625rem, 4vw, 3.875rem);     /* 42px → 62px */
+  --size-h3: clamp(1.875rem, 3.25vw, 3.25rem);   /* 30px → 52px */
+  --size-h4: clamp(1.5rem, 2.5vw, 2.125rem);     /* 24px → 34px */
+  --size-h5: clamp(1.25rem, 1.75vw, 1.625rem);   /* 20px → 26px */
+  --size-h6: 1.1875rem;                          /* 19px */
 
-  --size-xl: 1.25rem;                            /* 20px */
-  --size-lg: 1.125rem;                           /* 18px */
-  --size-md: 1rem;                               /* 16px */
-  --size-sm: 0.9375rem;                          /* 15px */
-  --size-xs: 0.875rem;                           /* 14px */
+  --size-xl: 1.125rem;                           /* 18px */
+  --size-lg: 1rem;                               /* 16px */
+  --size-md: 0.9375rem;                          /* 15px */
+  --size-sm: 0.875rem;                           /* 14px */
+  --size-xs: 0.8125rem;                          /* 13px */
 
 
   /*
@@ -85,10 +85,10 @@
   /*
    * Containers Width
    */
-  --container-sm: 1012px;    /* Used for Content Pages ("Privacy Policy", "Cookie Policy") */
-  --container-md: 1452px;   /* The most common container width */
-  --container-lg: 1632px;   /* Wider container */
-  --container-xl: 1762px;   /* Full-width container */
+  --container-sm: 860px;     /* Used for Content Pages ("Privacy Policy", "Cookie Policy") */
+  --container-md: 1200px;   /* The most common container width */
+  --container-lg: 1360px;   /* Wider container */
+  --container-xl: 1480px;   /* Full-width container */
 
 
   /*

@@ -1,6 +1,6 @@
 .services {
   background-color: var(--color-dark-deep);
-  padding: 5.625rem 0; /* 90px */
+  padding: 4.5rem 0; /* 72px */
 
   &__grid {
     --grid-placement: auto-fit;
@@ -11,15 +11,15 @@
   &__card {
     display: flex;
     flex-direction: column;
-    gap: 5rem; /* 80px */
+    gap: 4rem; /* 64px */
     background-color: var(--color-dark);
-    border-radius: 50px;
-    padding: 3.5rem 2.5rem; /* 56px / 40px */
+    border-radius: 40px;
+    padding: 2.75rem 2rem; /* 44px / 32px */
   }
 
   &__icon {
-    width: 77px;
-    height: 77px;
+    width: 62px;
+    height: 62px;
     flex-shrink: 0;
   }
 
@@ -33,13 +33,13 @@
   &__body {
     display: flex;
     flex-direction: column;
-    gap: 2.125rem; /* 34px */
+    gap: 1.75rem; /* 28px */
   }
 
   &__title {
     font-family: var(--font-primary);
     font-weight: var(--font-extra-bold);
-    font-size: 2rem; /* 32px */
+    font-size: 1.625rem; /* 26px */
     line-height: 1.125; /* 36px */
     color: var(--color-white);
   }
@@ -52,8 +52,8 @@
     color: var(--color-white);
 
     p {
-      margin-top: 2.125rem; /* 34px */
-      margin-bottom: 2.125rem; /* 34px */
+      margin-top: 1.75rem; /* 28px */
+      margin-bottom: 1.75rem; /* 28px */
 
       &:first-child {
         margin-top: 0;
@@ -66,9 +66,9 @@
 
     ul, ol {
       list-style: disc;
-      padding-left: 1.875rem; /* 30px */
-      margin-top: 2.125rem; /* 34px */
-      margin-bottom: 2.125rem; /* 34px */
+      padding-left: 1.5rem; /* 24px */
+      margin-top: 1.75rem; /* 28px */
+      margin-bottom: 1.75rem; /* 28px */
     }
 
     ol {

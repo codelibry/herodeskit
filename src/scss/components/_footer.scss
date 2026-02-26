@@ -1,11 +1,11 @@
 .footer {
   background-color: var(--color-dark-deep);
-  padding: 5.625rem 0; /* 90px */
+  padding: 4.5rem 0; /* 72px */
 
   &__inner {
     display: flex;
     justify-content: space-between;
-    gap: 3.75rem; /* 60px */
+    gap: 3rem; /* 48px */
     flex-wrap: wrap;
   }
 
@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 376px;
+    width: 300px;
     flex-shrink: 0;
   }
 
@@ -26,7 +26,7 @@
 
   &__logo {
     display: block;
-    height: 40px;
+    height: 34px;
     width: fit-content;
 
     img,
@@ -39,7 +39,7 @@
   &__description {
     font-family: var(--font-primary);
     font-weight: var(--font-regular);
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.25rem; /* 20px */
     line-height: 1.375; /* 33px */
     color: var(--color-white);
   }
@@ -47,7 +47,7 @@
   &__copyright {
     font-family: var(--font-primary);
     font-weight: var(--font-regular);
-    font-size: 1.125rem; /* 18px */
+    font-size: 1rem; /* 16px */
     line-height: normal;
     letter-spacing: -0.5px;
     color: rgba(255, 255, 255, 0.4);
@@ -57,7 +57,7 @@
   /* Right columns — nav + contacts */
   &__columns {
     display: flex;
-    gap: 10rem; /* 160px */
+    gap: 6rem; /* 96px */
   }
 
   /* Navigation menu */
@@ -72,7 +72,7 @@
       display: block;
       font-family: var(--font-primary);
       font-weight: var(--font-medium);
-      font-size: 1.25rem; /* 20px */
+      font-size: 1.125rem; /* 18px */
       line-height: 2.4; /* 48px */
       letter-spacing: -0.5px;
       color: var(--color-white);
@@ -91,7 +91,7 @@
   &__contacts {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem; /* 40px */
+    gap: 2rem; /* 32px */
   }
 
   &__contacts-info {
@@ -104,7 +104,7 @@
     display: block;
     font-family: var(--font-primary);
     font-weight: var(--font-medium);
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.25rem; /* 20px */
     line-height: 1.667; /* 40px */
     letter-spacing: -0.5px;
     color: var(--color-white);
@@ -126,8 +126,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 55px;
-    height: 55px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     overflow: hidden;
     transition: var(--transition-base);

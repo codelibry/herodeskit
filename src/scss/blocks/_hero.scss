@@ -1,30 +1,30 @@
 .hero {
   background-color: var(--color-dark-deep);
-  padding: 4.6875rem 0 5.625rem; /* 75px / 90px */
+  padding: 3.75rem 0 4.5rem; /* 60px / 72px */
 
   &__inner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 850px;
+    max-width: 720px;
     margin-inline: auto;
   }
 
   &__title {
     font-family: var(--font-primary);
     font-weight: var(--font-extra-bold);
-    font-size: 4.875rem; /* 78px */
+    font-size: 3.875rem; /* 62px */
     line-height: 1;
-    letter-spacing: -0.78px;
+    letter-spacing: -0.62px;
     color: var(--color-white);
     text-align: center;
   }
 
   &__subtitle {
-    margin-top: 1.5rem; /* 24px */
+    margin-top: 1.25rem; /* 20px */
     font-family: var(--font-primary);
     font-weight: var(--font-regular);
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.25rem; /* 20px */
     line-height: 1.67; /* 40px */
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
@@ -37,10 +37,10 @@
   /* Video player */
   &__video-player {
     position: relative;
-    margin-top: 5rem; /* 80px */
-    max-width: 1420px;
+    margin-top: 4rem; /* 64px */
+    max-width: 1140px;
     margin-inline: auto;
-    border-radius: 30px;
+    border-radius: 24px;
     overflow: hidden;
     background-color: var(--color-dark);
     cursor: pointer;
@@ -64,8 +64,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 124px;
-    height: 124px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     border: none;
     background: rgba(255, 255, 255, 0.25);
@@ -78,8 +78,8 @@
     padding: 0;
 
     svg {
-      width: 35px;
-      height: 38px;
+      width: 28px;
+      height: 30px;
       margin-left: 4px;
     }
   }
@@ -168,14 +168,14 @@
 .button.button--hero {
   --button-bg: var(--color-white);
   --button-text: var(--color-black);
-  margin-top: 3rem; /* 48px */
+  margin-top: 2.5rem; /* 40px */
   border: none;
   border-radius: 100px;
-  padding: 0 3.125rem; /* 50px */
-  height: 70px;
+  padding: 0 2.5rem; /* 40px */
+  height: 56px;
   font-family: var(--font-primary);
   font-weight: var(--font-medium);
-  font-size: 1.5rem; /* 24px */
+  font-size: 1.25rem; /* 20px */
   line-height: 40px;
   text-transform: none;
 
