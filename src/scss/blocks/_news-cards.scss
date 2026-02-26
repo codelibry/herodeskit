@@ -21,7 +21,7 @@
 
   &__grid {
     --grid-placement: auto-fit;
-    --grid-min-item-size: clamp(20rem, 31%, 28.125rem); /* 320px → 450px */
+    --grid-min-item-size: clamp(18rem, 31%, 28.125rem); /* 288px → 450px */
     --gap: 2.125rem; /* 34px */
   }
 
@@ -54,8 +54,8 @@
   &__date {
     font-family: var(--font-primary);
     font-weight: var(--font-regular);
-    font-size: var(--size-lg); /* 18px */
-    line-height: 1.39; /* ~25px */
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.25; /* 25px */
     color: var(--color-gray);
   }
 
@@ -67,6 +67,10 @@
     line-height: 1.1875; /* ~38px */
     letter-spacing: -1px;
     color: var(--color-white);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   /* Hover — only on desktop */
@@ -107,6 +111,10 @@
 
   @include md {
     padding: 3rem 0;
+
+    &__grid {
+      --gap: 5rem;
+    }
   }
 
   @media (max-width: 600px) {
@@ -160,5 +168,12 @@
       --button-bg: rgba(255, 255, 255, 0.08);
       opacity: 1;
     }
+  }
+
+  @include md {
+    font-size: 1.25rem;
+    height: 65px;
+    min-width: auto;
+    padding: 0 1.5rem;
   }
 }

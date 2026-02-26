@@ -6,7 +6,7 @@ function TestimonialsSlider() {
 
     new Swiper(swiperEl, {
         slidesPerView: 'auto',
-        spaceBetween: 16,
+        spaceBetween: 12,
         centeredSlides: true,
         grabCursor: true,
         loop: true,

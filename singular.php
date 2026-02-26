@@ -28,6 +28,16 @@ $post_slug = $post->post_name;
       </div>
 
   </div>
+
+  <?php
+    get_template_part('template-parts/sections/cta-banner', null, [
+      'cta-banner__title'       => get('cta-banner__title'),
+      'cta-banner__description' => get('cta-banner__description'),
+      'cta-banner__button-1'    => get('cta-banner__button-1'),
+      'cta-banner__button-2'    => get('cta-banner__button-2'),
+    ]);
+  ?>
+
 </main>
 
 <?php get_footer();?>

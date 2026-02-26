@@ -4,7 +4,7 @@
 
   &__grid {
     --grid-placement: auto-fit;
-    --grid-min-item-size: clamp(20rem, 31%, 28.125rem); /* 320px → 450px */
+    --grid-min-item-size: clamp(18rem, 31%, 28.125rem); /* 288px → 450px */
     --gap: 1.875rem; /* 30px */
   }
 
@@ -51,9 +51,28 @@
     line-height: 1.6; /* 32px */
     color: var(--color-white);
 
-    ul {
+    p {
+      margin-top: 2.125rem; /* 34px */
+      margin-bottom: 2.125rem; /* 34px */
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    ul, ol {
       list-style: disc;
       padding-left: 1.875rem; /* 30px */
+      margin-top: 2.125rem; /* 34px */
+      margin-bottom: 2.125rem; /* 34px */
+    }
+
+    ol {
+      list-style: decimal;
     }
 
     li + li {

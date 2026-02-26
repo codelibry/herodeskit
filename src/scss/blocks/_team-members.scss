@@ -11,12 +11,12 @@
     color: var(--color-white);
     text-align: center;
     max-width: 686px;
-    margin: 0 auto 3.75rem; /* 60px */
+    margin: 0 auto 6.125rem; /* 98px */
   }
 
   &__grid {
     --grid-placement: auto-fit;
-    --grid-min-item-size: clamp(20rem, 31%, 27.125rem); /* 320px → 434px */
+    --grid-min-item-size: clamp(18rem, 31%, 27.125rem); /* 288px → 434px */
     --gap: 2.5rem;
   }
 

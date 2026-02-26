@@ -32,11 +32,34 @@
 
   /* Card */
   &__card {
+    position: relative;
     display: flex;
     flex-direction: column;
     background-color: var(--color-dark);
     border-radius: 50px;
     padding: 3.4375rem 4.75rem 3.4375rem 4.625rem; /* 55px 76px 55px 74px */
+
+    &--link {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.05);
+        }
+      }
+    }
+  }
+
+  &__google-badge {
+    position: absolute;
+    top: calc(1.5rem + 5px);
+    right: calc(1.5rem + 5px);
+    width: 30px;
+    height: 30px;
+    filter: none !important;
   }
 
   &__avatar {
@@ -73,11 +96,11 @@
     background: none;
     border: none;
     padding: 0;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
     font-family: var(--font-primary);
     font-weight: var(--font-medium);
     font-style: italic;
-    font-size: 2.25rem; /* match text */
+    font-size: 1.5rem; /* 24px */
     line-height: 1.472;
     color: var(--color-white);
     text-decoration: underline;
@@ -126,7 +149,7 @@
 
     svg {
       width: 18px;
-      height: 18px;
+      height: 19px;
     }
   }
 
@@ -184,7 +207,7 @@
 
     svg {
       width: 18px;
-      height: 18px;
+      height: 19px;
     }
   }
 
@@ -271,7 +294,7 @@
     padding: 3rem 0;
 
     &__carousel .swiper-slide {
-      width: 380px;
+      width: 370px;
     }
 
     &__card {
@@ -317,11 +340,11 @@
     padding: 2.5rem 0;
 
     &__carousel .swiper-slide {
-      width: 320px;
+      width: 290px;
     }
 
     &__card {
-      padding: 1.25rem 1.5rem;
+      padding: 1.2rem 1.2rem;
       border-radius: var(--radius-sm);
     }
 
@@ -340,10 +363,6 @@
     &__google-icon {
       width: 48px;
       height: 48px;
-    }
-
-    &__badge-inner {
-      padding: 0.5rem 1rem 0.5rem 0.5rem;
     }
 
     &__badge-label,

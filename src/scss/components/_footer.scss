@@ -57,7 +57,7 @@
   /* Right columns — nav + contacts */
   &__columns {
     display: flex;
-    gap: 7.8125rem; /* 125px */
+    gap: 10rem; /* 160px */
   }
 
   /* Navigation menu */
@@ -185,7 +185,7 @@
   }
 
   @include md {
-    padding: 3rem 0;
+    padding: 3rem 0 4.5rem;
 
     &__columns {
       flex-direction: column;

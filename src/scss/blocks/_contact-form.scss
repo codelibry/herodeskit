@@ -47,6 +47,19 @@
 
   &__body .wpcf7-form p {
     margin: 0;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  &__body .wpcf7-form p > br {
+    display: none;
+  }
+
+  &__body .wpcf7-form p label,
+  &__body .wpcf7-form p .wpcf7-form-control-wrap,
+  &__body .wpcf7-form p input[type="submit"] {
+    font-size: var(--size-md);
+    line-height: normal;
   }
 
   &__body .wpcf7-form label {
@@ -88,6 +101,7 @@
   &__body .wpcf7-form textarea {
     height: 8.5rem;
     resize: none;
+    padding-right: 20px;
   }
 
   &__body .wpcf7-form input[type="submit"] {
@@ -112,6 +126,14 @@
     }
   }
 
+  &__body .wpcf7-spinner {
+    display: none;
+  }
+
+  &__body .wpcf7-form.submitting .wpcf7-spinner {
+    display: inline-block;
+  }
+
   /* CF7 validation messages */
   &__body .wpcf7-not-valid-tip {
     color: var(--color-error);
@@ -120,10 +142,12 @@
   }
 
   &__body .wpcf7-response-output {
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-sm);
     padding: 1rem;
     text-align: center;
     font-size: var(--size-md);
+    color: rgba(255, 255, 255, 0.7);
     margin: 0;
   }
 

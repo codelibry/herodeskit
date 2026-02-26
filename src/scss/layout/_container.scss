@@ -6,27 +6,47 @@
 
 @mixin container {
   margin-inline: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   max-width: var(--container-md);
 }
 
 .container {
   @include container;
   max-width: var(--container-md);
+
+  @include md {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .container-sm {
   @include container;
   max-width: var(--container-sm);
+
+  @include md {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .container-lg {
   @include container;
   max-width: var(--container-lg);
+
+  @include md {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .container-xl {
   @include container;
   max-width: var(--container-xl);
+
+  @include md {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

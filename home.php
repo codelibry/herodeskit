@@ -42,7 +42,8 @@ $current    = max(1, $paged);
                         <div class="news-pagination__desktop">
                             <?php if ($current > 1): ?>
                                 <a href="<?php echo esc_url(get_pagenum_link($current - 1)); ?>" class="news-pagination__arrow news-pagination__arrow--prev" aria-label="Previous page">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <svg width="21" height="14" viewBox="0 0 21 14" fill="none" style="transform: rotate(180deg)"><path d="M0.75 6.75L18.75 6.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12.75 0.75L19.3076 6.75L12.75 12.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                    <span>Back</span>
                                 </a>
                             <?php endif; ?>
 
@@ -95,7 +96,7 @@ $current    = max(1, $paged);
                             <?php if ($current < $total): ?>
                                 <a href="<?php echo esc_url(get_pagenum_link($current + 1)); ?>" class="news-pagination__arrow news-pagination__arrow--next">
                                     <span>Next</span>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <svg width="21" height="14" viewBox="0 0 21 14" fill="none"><path d="M0.75 6.75L18.75 6.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12.75 0.75L19.3076 6.75L12.75 12.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                                 </a>
                             <?php endif; ?>
                         </div>
@@ -104,12 +105,12 @@ $current    = max(1, $paged);
                         <div class="news-pagination__mobile">
                             <?php if ($current > 1): ?>
                                 <a href="<?php echo esc_url(get_pagenum_link($current - 1)); ?>" class="news-pagination__arrow news-pagination__arrow--prev" aria-label="Previous page">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <svg width="21" height="14" viewBox="0 0 21 14" fill="none" style="transform: rotate(180deg)"><path d="M0.75 6.75L18.75 6.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12.75 0.75L19.3076 6.75L12.75 12.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                                     <span>Prev</span>
                                 </a>
                             <?php else: ?>
                                 <span class="news-pagination__arrow news-pagination__arrow--prev is-disabled">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <svg width="21" height="14" viewBox="0 0 21 14" fill="none" style="transform: rotate(180deg)"><path d="M0.75 6.75L18.75 6.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12.75 0.75L19.3076 6.75L12.75 12.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                                     <span>Prev</span>
                                 </span>
                             <?php endif; ?>
@@ -119,12 +120,12 @@ $current    = max(1, $paged);
                             <?php if ($current < $total): ?>
                                 <a href="<?php echo esc_url(get_pagenum_link($current + 1)); ?>" class="news-pagination__arrow news-pagination__arrow--next">
                                     <span>Next</span>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <svg width="21" height="14" viewBox="0 0 21 14" fill="none"><path d="M0.75 6.75L18.75 6.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12.75 0.75L19.3076 6.75L12.75 12.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                                 </a>
                             <?php else: ?>
                                 <span class="news-pagination__arrow news-pagination__arrow--next is-disabled">
                                     <span>Next</span>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <svg width="21" height="14" viewBox="0 0 21 14" fill="none"><path d="M0.75 6.75L18.75 6.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12.75 0.75L19.3076 6.75L12.75 12.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                                 </span>
                             <?php endif; ?>
                         </div>

@@ -28,6 +28,13 @@ if (empty($title) && empty($reviews)) {
     return;
 }
 
+// Build Google Maps profile URL
+$google_profile_url = '';
+$page_details = get_option('trustindex-google-page-details');
+if (!empty($page_details['id'])) {
+    $google_profile_url = 'https://www.google.com/maps/search/?api=1&query=Google&query_place_id=' . urlencode($page_details['id']);
+}
+
 ?>
 
 <section class="testimonials-v2">
@@ -57,7 +64,14 @@ if (empty($title) && empty($reviews)) {
                         }
                     ?>
                         <div class="swiper-slide">
-                            <div class="testimonials-v2__card">
+                            <?php if ($google_profile_url): ?>
+                                <a href="<?php echo esc_url($google_profile_url); ?>" target="_blank" rel="noopener noreferrer" class="testimonials-v2__card testimonials-v2__card--link">
+                            <?php else: ?>
+                                <div class="testimonials-v2__card">
+                            <?php endif; ?>
+
+                                <img src="https://cdn.trustindex.io/assets/platform/Google/icon.svg" alt="Google" class="testimonials-v2__google-badge" width="30" height="30" loading="lazy">
+
                                 <div class="testimonials-v2__avatar">
                                     <?php if (!empty($review->user_photo)): ?>
                                         <img src="<?php echo esc_url($review->user_photo); ?>" alt="<?php echo esc_attr($review->user); ?>" width="62" height="62" loading="lazy">
@@ -100,7 +114,12 @@ if (empty($title) && empty($reviews)) {
                                         <?php endfor; ?>
                                     </div>
                                 </div>
-                            </div>
+
+                            <?php if ($google_profile_url): ?>
+                                </a>
+                            <?php else: ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
                 </div>
