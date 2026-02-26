@@ -19,26 +19,26 @@ $has_video = !empty($poster) || !empty($video);
 
         <div class="hero__inner">
             <?php if ($title): ?>
-                <h1 class="hero__title">
+                <h1 class="hero__title" data-reveal="fade-up">
                     <?php echo esc_html($title); ?>
                 </h1>
             <?php endif; ?>
 
             <?php if ($subtitle): ?>
-                <p class="hero__subtitle">
+                <p class="hero__subtitle" data-reveal="fade-up" data-reveal-delay="100">
                     <?php echo esc_html($subtitle); ?>
                 </p>
             <?php endif; ?>
 
             <?php if ($button): ?>
-                <a class="button button--hero" href="<?php echo esc_url($button['url']); ?>">
+                <a class="button button--hero" data-reveal="fade-up" data-reveal-delay="200" href="<?php echo esc_url($button['url']); ?>">
                     <?php echo esc_html($button['title']); ?>
                 </a>
             <?php endif; ?>
         </div>
 
         <?php if ($has_video): ?>
-            <div class="hero__video-player js-video-player">
+            <div class="hero__video-player js-video-player" data-reveal="zoom-in" data-reveal-delay="300">
                 <?php if ($video): ?>
                     <video
                         class="hero__video"

@@ -14,6 +14,8 @@
 
   &__logo {
     flex-shrink: 0;
+    animation: header-fade-in 0.5s ease both;
+    animation-delay: 0.1s;
 
     a {
       display: flex;
@@ -33,6 +35,8 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    animation: header-fade-in 0.5s ease both;
+    animation-delay: 0.2s;
 
     .menu {
       display: flex;
@@ -120,6 +124,11 @@
     flex-shrink: 0;
   }
 
+  &__cta.button {
+    animation: header-fade-in 0.5s ease both;
+    animation-delay: 0.3s;
+  }
+
   /* Hidden by default, shown at header-nav breakpoint */
   &__mobile-menu {
     display: none;
@@ -131,6 +140,8 @@
     align-items: center;
     justify-content: center;
     color: var(--color-white);
+    animation: header-fade-in 0.5s ease both;
+    animation-delay: 0.3s;
 
     svg {
       width: 28px;
@@ -181,5 +192,25 @@
     &__logo a {
       height: 28px;
     }
+  }
+}
+
+@keyframes header-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__logo,
+  .header__menu,
+  .header__cta.button,
+  .header__mobile-menu-button {
+    animation: none;
   }
 }

@@ -13,7 +13,7 @@ if (empty($title)) {
 <section class="contact-form">
     <div class="container">
 
-        <div class="contact-form__hero">
+        <div class="contact-form__hero" data-reveal="fade-up">
             <h1 class="contact-form__title">
                 <?php echo esc_html($title); ?>
             </h1>
@@ -26,7 +26,7 @@ if (empty($title)) {
         </div>
 
         <?php if ($form_id): ?>
-            <div class="contact-form__body">
+            <div class="contact-form__body" data-reveal="fade-up" data-reveal-delay="100">
                 <?php echo do_shortcode('[contact-form-7 id="' . esc_attr($form_id) . '"]'); ?>
             </div>
         <?php endif; ?>

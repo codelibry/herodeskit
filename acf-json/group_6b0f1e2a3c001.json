@@ -473,6 +473,61 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_6b0f1e04a0040",
+                            "label": "Media Type",
+                            "name": "content-image__media-type",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "Choose whether to show an image or a Google Map",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "image": "Image",
+                                "map": "Google Map"
+                            },
+                            "default_value": "image",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "allow_custom": 0,
+                            "search_placeholder": "",
+                            "parent_layout": "layout_6b0f1e04a0001"
+                        },
+                        {
+                            "key": "field_6b0f1e04a0041",
+                            "label": "Google Maps Embed URL",
+                            "name": "content-image__map-url",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "Paste a Google Maps embed URL or share link",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6b0f1e04a0040",
+                                        "operator": "==",
+                                        "value": "map"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "https://www.google.com/maps/embed?...",
+                            "parent_layout": "layout_6b0f1e04a0001"
+                        },
+                        {
                             "key": "field_6b0f1e04a0010",
                             "label": "Layout Direction",
                             "name": "content-image__direction",
@@ -509,7 +564,15 @@
                             "type": "select",
                             "instructions": "Choose the aspect ratio of the image",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6b0f1e04a0040",
+                                        "operator": "!=",
+                                        "value": "map"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "50",
                                 "class": "",
@@ -539,7 +602,15 @@
                             "type": "image",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6b0f1e04a0040",
+                                        "operator": "!=",
+                                        "value": "map"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "50",
                                 "class": "",
@@ -629,7 +700,15 @@
                             "type": "text",
                             "instructions": "Optional overlay card on the image (e.g. \"21+\")",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6b0f1e04a0040",
+                                        "operator": "!=",
+                                        "value": "map"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "50",
                                 "class": "",
@@ -650,7 +729,15 @@
                             "type": "textarea",
                             "instructions": "Text under the number on the overlay card",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6b0f1e04a0040",
+                                        "operator": "!=",
+                                        "value": "map"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "50",
                                 "class": "",
@@ -2092,5 +2179,5 @@
     "active": true,
     "description": "Flexible content page builder for arranging sections",
     "show_in_rest": 0,
-    "modified": 1740182400
+    "modified": 1740528000
 }

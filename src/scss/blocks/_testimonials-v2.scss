@@ -39,18 +39,6 @@
     border-radius: 50px;
     padding: 3.4375rem 4.75rem 3.4375rem 4.625rem; /* 55px 76px 55px 74px */
 
-    &--link {
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      @media (hover: hover) {
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.05);
-        }
-      }
-    }
   }
 
   &__google-badge {
@@ -59,7 +47,34 @@
     right: calc(1.5rem + 5px);
     width: 30px;
     height: 30px;
-    filter: none !important;
+    display: block;
+    transition: transform 0.2s ease;
+
+    img {
+      width: 100%;
+      height: 100%;
+      filter: none !important;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  a#{&}__avatar {
+    transition: opacity 0.2s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    img {
+      filter: none !important;
+    }
   }
 
   &__avatar {

@@ -12,7 +12,7 @@ if (empty($cards)) {
 <section class="services-slider">
     <div class="container">
 
-        <div class="services-slider__header">
+        <div class="services-slider__header" data-reveal="fade-up">
             <?php if ($title): ?>
                 <h2 class="services-slider__title">
                     <?php echo esc_html($title); ?>
@@ -29,7 +29,7 @@ if (empty($cards)) {
             </div>
         </div>
 
-        <div class="services-slider__carousel">
+        <div class="services-slider__carousel" data-reveal="fade-up" data-reveal-delay="100">
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <?php foreach ($cards as $card):

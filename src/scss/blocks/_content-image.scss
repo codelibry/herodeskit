@@ -11,6 +11,7 @@
   &__media {
     position: relative;
     border-radius: 50px;
+    overflow: hidden;
     width: clamp(22.25rem, 35vw, 588px); /* 356px → 588px */
     flex-shrink: 0;
   }
@@ -127,6 +128,13 @@
     }
   }
 
+  &__map {
+    display: block;
+    width: 100%;
+    aspect-ratio: 588 / 588;
+    border: 0;
+  }
+
   /* Ratio modifiers */
   &--square .content-image__img {
     aspect-ratio: 1 / 1;
@@ -234,7 +242,10 @@
     &__img {
       aspect-ratio: 1 / 1;
       max-height: 520px;
-     
+    }
+
+    &--map .content-image__map {
+      aspect-ratio: 1 / 1;
     }
 
     &__content {

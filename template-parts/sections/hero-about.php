@@ -21,12 +21,12 @@ $has_media = !empty($image) || $has_video;
 
         <div class="hero-about__top">
             <div class="hero-about__heading">
-                <h1 class="hero-about__title">
+                <h1 class="hero-about__title" data-reveal="fade-up">
                     <?php echo esc_html($title); ?>
                 </h1>
             </div>
 
-            <div class="hero-about__text">
+            <div class="hero-about__text" data-reveal="fade-up" data-reveal-delay="100">
                 <?php if ($label): ?>
                     <span class="hero-about__label">
                         <?php echo esc_html($label); ?>
@@ -42,7 +42,7 @@ $has_media = !empty($image) || $has_video;
         </div>
 
         <?php if ($has_media): ?>
-            <div class="hero-about__media">
+            <div class="hero-about__media" data-reveal="zoom-in" data-reveal-delay="200">
                 <?php if ($image): ?>
                     <div class="hero-about__image">
                         <?php echo wp_get_attachment_image($image, 'large', false, [

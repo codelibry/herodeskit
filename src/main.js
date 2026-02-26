@@ -8,6 +8,8 @@ import PhoneMask from './js/phone-mask.js';
 import ServicesSlider from './js/services-slider.js';
 import HeroVideo from './js/hero-video.js';
 import TestimonialsSlider from './js/testimonials-slider.js';
+import ScrollTop from './js/scroll-top.js';
+import Reveal from './js/reveal.js';
 
 import './js/header-submenu';
 import './scss/main.scss';
@@ -27,6 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
   ServicesSlider();
   HeroVideo();
   TestimonialsSlider();
+  ScrollTop();
+  Reveal();
 
 });
 

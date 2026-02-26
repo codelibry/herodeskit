@@ -10,7 +10,7 @@ if(empty($slider)) {
 
 <section class="banner-slider | section" style="position: relative;">
     <div class="container flow">
-        <div class="slider-wrapper | flow">
+        <div class="slider-wrapper | flow" data-reveal="fade-in">
             <div class="swiper">
                 <ul class="swiper-wrapper">
                      <?php foreach ($slider as $slide): 

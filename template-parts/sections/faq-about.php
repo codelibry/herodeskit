@@ -16,7 +16,7 @@ if(empty($about_content) && empty($contacts_content) && empty($faq_list)) {
 
 <section class="faq-about | section" id="about">
     <div class="container | flow">
-        <div class="faq-about__about auto-grid" data-layout="50-50">
+        <div class="faq-about__about auto-grid" data-layout="50-50" data-reveal="fade-up">
             <div class="faq-about__about-content | flow">
                 <?php if($about_content): ?>
                     <div class="box content">
@@ -42,7 +42,7 @@ if(empty($about_content) && empty($contacts_content) && empty($faq_list)) {
             <?php endif; ?>
         </div>
 
-        <div class="faq-about__faq auto-grid" data-layout="50-50" id="faq">
+        <div class="faq-about__faq auto-grid" data-layout="50-50" id="faq" data-reveal="fade-up" data-reveal-delay="100">
             <?php if (is_numeric($faq_image)): ?>
                 <div class="box">
                     <?php echo wp_get_attachment_image($faq_image, 'medium', false, [

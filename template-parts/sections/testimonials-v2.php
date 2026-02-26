@@ -39,13 +39,13 @@ if (!empty($page_details['id'])) {
 
 <section class="testimonials-v2">
     <?php if ($title): ?>
-        <h2 class="testimonials-v2__title">
+        <h2 class="testimonials-v2__title" data-reveal="fade-up">
             <?php echo wp_kses_post($title); ?>
         </h2>
     <?php endif; ?>
 
     <?php if (!empty($reviews)): ?>
-        <div class="testimonials-v2__carousel">
+        <div class="testimonials-v2__carousel" data-reveal="fade-up" data-reveal-delay="100">
             <div class="swiper js-testimonials-swiper">
                 <div class="swiper-wrapper">
                     <?php foreach ($reviews as $review):
@@ -64,21 +64,31 @@ if (!empty($page_details['id'])) {
                         }
                     ?>
                         <div class="swiper-slide">
-                            <?php if ($google_profile_url): ?>
-                                <a href="<?php echo esc_url($google_profile_url); ?>" target="_blank" rel="noopener noreferrer" class="testimonials-v2__card testimonials-v2__card--link">
-                            <?php else: ?>
-                                <div class="testimonials-v2__card">
-                            <?php endif; ?>
+                            <div class="testimonials-v2__card">
 
-                                <img src="https://cdn.trustindex.io/assets/platform/Google/icon.svg" alt="Google" class="testimonials-v2__google-badge" width="30" height="30" loading="lazy">
+                                <?php if ($google_profile_url): ?>
+                                    <a href="<?php echo esc_url($google_profile_url); ?>" target="_blank" rel="noopener noreferrer" class="testimonials-v2__google-badge">
+                                        <img src="https://cdn.trustindex.io/assets/platform/Google/icon.svg" alt="Google" width="30" height="30" loading="lazy">
+                                    </a>
+                                <?php else: ?>
+                                    <img src="https://cdn.trustindex.io/assets/platform/Google/icon.svg" alt="Google" class="testimonials-v2__google-badge" width="30" height="30" loading="lazy">
+                                <?php endif; ?>
 
-                                <div class="testimonials-v2__avatar">
+                                <?php if ($google_profile_url): ?>
+                                    <a href="<?php echo esc_url($google_profile_url); ?>" target="_blank" rel="noopener noreferrer" class="testimonials-v2__avatar">
+                                <?php else: ?>
+                                    <div class="testimonials-v2__avatar">
+                                <?php endif; ?>
                                     <?php if (!empty($review->user_photo)): ?>
                                         <img src="<?php echo esc_url($review->user_photo); ?>" alt="<?php echo esc_attr($review->user); ?>" width="62" height="62" loading="lazy">
                                     <?php else: ?>
                                         <?php echo get_inline_svg('quote-icon'); ?>
                                     <?php endif; ?>
-                                </div>
+                                <?php if ($google_profile_url): ?>
+                                    </a>
+                                <?php else: ?>
+                                    </div>
+                                <?php endif; ?>
 
                                 <?php if (!empty($review->text)): ?>
                                     <div class="testimonials-v2__text-wrap js-review-text" <?php if ($is_long): ?>data-full="<?php echo esc_attr($full_text); ?>" data-short="<?php echo esc_attr($short_text); ?>"<?php endif; ?>>
@@ -115,18 +125,14 @@ if (!empty($page_details['id'])) {
                                     </div>
                                 </div>
 
-                            <?php if ($google_profile_url): ?>
-                                </a>
-                            <?php else: ?>
-                                </div>
-                            <?php endif; ?>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
         </div>
 
-        <div class="testimonials-v2__badge">
+        <div class="testimonials-v2__badge" data-reveal="fade-up" data-reveal-delay="200">
             <div class="testimonials-v2__badge-inner">
                 <div class="testimonials-v2__google-icon">
                     <img src="https://cdn.trustindex.io/assets/platform/Google/icon.svg" alt="Google" width="72" height="72">

@@ -1,0 +1,48 @@
+.scroll-top {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  background: var(--color-dark);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+
+    @include lg {
+      &{
+        width: 45px;
+        height: 45px;
+      }
+      svg {
+    width: 20px;
+    height: 20px;
+  }
+    }
+}

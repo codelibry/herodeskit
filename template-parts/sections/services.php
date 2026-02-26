@@ -11,7 +11,7 @@ if (empty($cards)) {
 <section class="services">
     <div class="container">
 
-        <div class="services__grid auto-grid">
+        <div class="services__grid auto-grid" data-reveal="fade-up">
             <?php foreach ($cards as $card):
                 $icon    = $card['icon'] ?? '';
                 $title   = $card['title'] ?? '';
@@ -19,7 +19,7 @@ if (empty($cards)) {
 
                 if (empty($title)) continue;
             ?>
-                <div class="services__card">
+                <div class="services__card hover-glow">
                     <?php if ($icon): ?>
                         <div class="services__icon">
                             <?php echo wp_get_attachment_image($icon, 'thumbnail', false, [

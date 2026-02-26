@@ -13,7 +13,7 @@ if (empty($title)) {
 
 <section class="cta-banner">
     <div class="container">
-        <div class="cta-banner__inner">
+        <div class="cta-banner__inner" data-reveal="zoom-in">
 
             <div class="cta-banner__mesh" aria-hidden="true">
                 <img src="<?php echo get_image_src('mesh.png'); ?>" alt="" loading="lazy">

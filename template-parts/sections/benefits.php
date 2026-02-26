@@ -15,18 +15,18 @@ if(empty($benefits_list)) {
 <section class="benefits | section">
     <div class="container | flow">
         <?php if($benefits_title): ?>
-            <h2 class="benefits__title">
+            <h2 class="benefits__title" data-reveal="fade-up">
                 <?php echo $benefits_title ?>
             </h2>
         <?php endif; ?>
 
         <?php if($benefits_subtitle): ?>
-            <p class="benefits__subtitle">
+            <p class="benefits__subtitle" data-reveal="fade-up" data-reveal-delay="100">
                 <?php echo $benefits_subtitle ?>
             </p>
         <?php endif; ?>
 
-        <div class="benefits__container auto-grid" data-layout="50-50" id="benefits">  <!-- or id="faq" -->
+        <div class="benefits__container auto-grid" data-layout="50-50" id="benefits" data-reveal="fade-up" data-reveal-delay="200">  <!-- or id="faq" -->
             <?php if(!empty($benefits_list)): ?>
                 <div class="box">
                     <div class="benefits-container">

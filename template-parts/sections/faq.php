@@ -12,7 +12,7 @@ if(empty($faq_list)) {
 
 <section class="faq | section">
     <div class="container | flow">
-        <div class="faq__faq auto-grid" data-layout="50-50" id="faq-secondary">  <!-- or id="faq" -->
+        <div class="faq__faq auto-grid" data-layout="50-50" id="faq-secondary" data-reveal="fade-up">  <!-- or id="faq" -->
             <?php if (is_numeric($faq_image)): ?>
                 <div class="box">
                     <?php echo wp_get_attachment_image($faq_image, 'medium', false, [

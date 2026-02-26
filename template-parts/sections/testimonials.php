@@ -17,16 +17,16 @@ $testim_query = new WP_Query($query_args);
     <section class="testimonial-slider | section" style="position: relative;">
         <div class="container flow">
              <?php if($title): ?>
-            <h2 class="testimonial__title">
+            <h2 class="testimonial__title" data-reveal="fade-up">
                 <?php echo $title ?>
             </h2>
         <?php endif; ?>
         <?php if($subtitle): ?>
-            <div class="testimonial__subtitle">
+            <div class="testimonial__subtitle" data-reveal="fade-up" data-reveal-delay="100">
                 <?php echo $subtitle ?>
             </div>
         <?php endif; ?>
-            <div class="slider-wrapper | flow">
+            <div class="slider-wrapper | flow" data-reveal="fade-up" data-reveal-delay="200">
                 <div class="swiper">
                     <ul class="swiper-wrapper">
                             <?php while ($testim_query->have_posts()) :

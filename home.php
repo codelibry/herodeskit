@@ -15,7 +15,7 @@ $current    = max(1, $paged);
     <!-- Hero -->
     <section class="news-archive__hero">
         <div class="container">
-            <h1 class="news-archive__title">News</h1>
+            <h1 class="news-archive__title" data-reveal="fade-up">News</h1>
         </div>
     </section>
 
@@ -24,7 +24,7 @@ $current    = max(1, $paged);
         <div class="container">
 
             <?php if (have_posts()): ?>
-                <div class="news-archive__grid auto-grid">
+                <div class="news-archive__grid auto-grid" data-reveal="fade-up" data-reveal-delay="100">
                     <?php while (have_posts()): the_post();
                         get_template_part('template-parts/components/news-card', null, [
                             'image' => get_post_thumbnail_id(),

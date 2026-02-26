@@ -14,18 +14,18 @@ if(empty($list)) {
 <section class="advantages | section">
     <div class="container | flow">
         <?php if($title): ?>
-            <h2 class="advantages__title">
+            <h2 class="advantages__title" data-reveal="fade-up">
                 <?php echo $title ?>
             </h2>
         <?php endif; ?>
 
         <?php if($subtitle): ?>
-            <p class="advantages__subtitle">
+            <p class="advantages__subtitle" data-reveal="fade-up" data-reveal-delay="100">
                 <?php echo $subtitle ?>
             </p>
         <?php endif; ?>
 
-        <div class="advantages__container" id="our-advantages">
+        <div class="advantages__container" id="our-advantages" data-reveal="fade-up" data-reveal-delay="200">
             <?php if(!empty($list)): ?>
                 <div class="box">
                     <div class="advantages-grid auto-grid" data-layout="thirds">

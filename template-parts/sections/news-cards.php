@@ -20,7 +20,7 @@ if (!$recent_posts->have_posts()) {
 <section class="news-cards">
     <div class="container">
 
-        <div class="news-cards__header">
+        <div class="news-cards__header" data-reveal="fade-up">
             <?php if ($title): ?>
                 <h2 class="news-cards__title">
                     <?php echo esc_html($title); ?>
@@ -35,11 +35,12 @@ if (!$recent_posts->have_posts()) {
         </div>
 
         <div class="news-cards__grid auto-grid">
-            <?php while ($recent_posts->have_posts()): $recent_posts->the_post();
+            <?php $card_i = 0; while ($recent_posts->have_posts()): $recent_posts->the_post();
                 $image_id = get_post_thumbnail_id();
                 $link     = get_permalink();
             ?>
-                <a href="<?php echo esc_url($link); ?>" class="news-cards__card">
+                <a href="<?php echo esc_url($link); ?>" class="news-cards__card" data-reveal="fade-up" data-reveal-delay="<?php echo $card_i * 100; ?>">
+                <?php $card_i++; ?>
                     <?php if ($image_id): ?>
                         <div class="news-cards__media">
                             <?php echo wp_get_attachment_image($image_id, 'medium_large', false, [

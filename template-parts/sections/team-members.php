@@ -13,20 +13,21 @@ if (empty($members)) {
     <div class="container">
 
         <?php if ($title): ?>
-            <h2 class="team-members__title">
+            <h2 class="team-members__title" data-reveal="fade-up">
                 <?php echo esc_html($title); ?>
             </h2>
         <?php endif; ?>
 
         <div class="team-members__grid auto-grid">
-            <?php foreach ($members as $member):
+            <?php $card_i = 0; foreach ($members as $member):
                 $image    = $member['image'] ?? '';
                 $name     = $member['name'] ?? '';
                 $position = $member['position'] ?? '';
 
                 if (empty($name)) continue;
             ?>
-                <div class="team-members__card">
+                <div class="team-members__card hover-lift" data-reveal="fade-up" data-reveal-delay="<?php echo $card_i * 100; ?>">
+                <?php $card_i++; ?>
                     <?php if ($image): ?>
                         <div class="team-members__media">
                             <?php if (is_numeric($image)): ?>
