@@ -35,7 +35,7 @@ if ($is_map) {
         $zoom = (float) $matches[3];
         // Convert zoom level to embed "d" parameter (meters per view)
         $d = 591657550.5 / pow(2, $zoom);
-        $embed_url = 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d' . round($d) . '!2d' . $lng . '!3d' . $lat . '!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1';
+        $embed_url = 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d' . round($d) . '!2d' . $lng . '!3d' . $lat . '!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1&hl=en&language=en';
     } else {
         // Fallback: use Google Maps embed API with query
         $embed_url = 'https://www.google.com/maps/embed/v1/place?key=&q=' . urlencode($map_url);

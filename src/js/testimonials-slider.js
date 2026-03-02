@@ -5,14 +5,22 @@ function TestimonialsSlider() {
     if (!swiperEl) return;
 
     new Swiper(swiperEl, {
-        slidesPerView: 'auto',
+        slidesPerView: 1.15,
         spaceBetween: 12,
-        centeredSlides: true,
         grabCursor: true,
         loop: true,
         breakpoints: {
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+            },
             768: {
-                spaceBetween: 64,
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            1200: {
+                slidesPerView: 4,
+                spaceBetween: 24,
             },
         },
     });

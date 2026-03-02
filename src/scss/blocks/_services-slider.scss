@@ -33,16 +33,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 120px;
-    height: 120px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
     cursor: pointer;
     transition: var(--transition-base);
     padding: 0;
 
     svg {
-      width: 58px;
-      height: 12px;
+      width: 46px;
+      height: 10px;
     }
 
     &.swiper-button-disabled {
@@ -150,12 +150,12 @@
 
     &__prev,
     &__next {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
 
       svg {
-        width: 50px;
-        height: 10px;
+        width: 40px;
+        height: 8px;
       }
     }
 
@@ -197,12 +197,12 @@
 
     &__prev,
     &__next {
-      width: 70px;
-      height: 70px;
+      width: 56px;
+      height: 56px;
 
       svg {
-        width: 35px;
-        height: 8px;
+        width: 28px;
+        height: 6px;
       }
     }
 

@@ -2147,6 +2147,78 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6b0f1e17a0001": {
+                    "key": "layout_6b0f1e17a0001",
+                    "name": "get-in-touch",
+                    "label": "Get in Touch",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6b0f1e17a0001",
+                            "label": "Title",
+                            "name": "get-in-touch__title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Get in Touch",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_6b0f1e17a0001"
+                        },
+                        {
+                            "key": "field_6b0f1e17a0002",
+                            "label": "Email",
+                            "name": "get-in-touch__email",
+                            "aria-label": "",
+                            "type": "email",
+                            "instructions": "Contact email address",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "info@example.com",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_6b0f1e17a0001"
+                        },
+                        {
+                            "key": "field_6b0f1e17a0003",
+                            "label": "Phone",
+                            "name": "get-in-touch__phone",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Phone number to display",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "(425) 657-6226",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_6b0f1e17a0001"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Section",
