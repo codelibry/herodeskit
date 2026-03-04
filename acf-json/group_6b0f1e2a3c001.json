@@ -2215,6 +2215,122 @@
                             "prepend": "",
                             "append": "",
                             "parent_layout": "layout_6b0f1e17a0001"
+                        },
+                        {
+                            "key": "field_6b0f1e17a0004",
+                            "label": "Address",
+                            "name": "get-in-touch__address",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Physical address to display",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "1780 Iowa St, Unit #2297, Bellingham, WA 98229",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_6b0f1e17a0001"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6b0f1e17a0005": {
+                    "key": "layout_6b0f1e17a0005",
+                    "name": "service-area",
+                    "label": "Service Area",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6b0f1e17a0006",
+                            "label": "Title",
+                            "name": "service-area__title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Our Service Area",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_6b0f1e17a0005"
+                        },
+                        {
+                            "key": "field_6b0f1e17a0007",
+                            "label": "Text",
+                            "name": "service-area__text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Subtitle text",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "We service businesses across:",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_layout": "layout_6b0f1e17a0005"
+                        },
+                        {
+                            "key": "field_6b0f1e17a0008",
+                            "label": "Countries",
+                            "name": "service-area__countries",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 0,
+                            "button_label": "Add Country",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6b0f1e17a0009",
+                                    "label": "Country",
+                                    "name": "service-area__country",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "e.g. United States",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_layout": "layout_6b0f1e17a0005"
+                                }
+                            ],
+                            "parent_layout": "layout_6b0f1e17a0005"
                         }
                     ],
                     "min": "",

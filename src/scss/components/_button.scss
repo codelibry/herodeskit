@@ -32,9 +32,11 @@
   transition: var(--transition-base);
   min-width: var(--button-min-width);
 
-  &:hover,
-  &:focus-visible {
-    opacity: 0.8;
+  @media (hover: hover) {
+    &:hover,
+    &:focus-visible {
+      opacity: 0.7;
+    }
   }
 
   &:active {
