@@ -53,30 +53,28 @@
 
   /* Prev — white fill, black arrow */
   &__prev {
-    background: var(--color-white);
+    background-color: var(--color-white);
     border: 1px solid var(--color-white);
   }
 
   /* Next — transparent, white border, white arrow */
   &__next {
-    background: transparent;
+    background-color: transparent;
     border: 1px solid var(--color-white);
   }
 
   @media (hover: hover) {
-    &__prev:not(.swiper-button-disabled):hover {
-      opacity: 0.85;
-    }
-
+    &__prev:not(.swiper-button-disabled):hover,
     &__next:not(.swiper-button-disabled):hover {
-      background: rgba(255, 255, 255, 0.08);
+      background-color: var(--color-hover);
+      border-color: var(--color-hover);
     }
   }
 
-  /* Carousel overflow right */
+  /* Carousel — contained within container */
   &__carousel {
     .swiper {
-      overflow: visible;
+      overflow: hidden;
     }
   }
 
@@ -87,7 +85,7 @@
     gap: 4rem; /* 64px */
     background-color: var(--color-dark);
     border-radius: 40px;
-    padding: 2.75rem 2rem; /* 44px / 32px */
+    padding: 2.75rem 1.5rem; /* 44px / 24px */
     height: 100%;
   }
 
@@ -136,7 +134,7 @@
   }
 
   .swiper-slide {
-    width: 380px;
+    width: calc((100% - 60px) / 3); /* 3 slides with 30px gaps */
     height: auto;
   }
 
@@ -178,7 +176,7 @@
     }
 
     .swiper-slide {
-      width: 370px;
+      width: calc((100% - 60px) / 3);
     }
   }
 
@@ -207,7 +205,7 @@
     }
 
     .swiper-slide {
-      width: 320px;
+      width: calc((100% - 30px) / 2);
     }
   }
 
@@ -226,7 +224,7 @@
     }
 
     .swiper-slide {
-      width: 280px;
+      width: 85%;
     }
   }
 }

@@ -121,7 +121,9 @@
 
     @media (hover: hover) {
       &:hover {
-        opacity: 0.7;
+        background-color: var(--color-hover);
+        color: var(--color-white);
+        opacity: 1;
       }
     }
   }

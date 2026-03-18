@@ -19,10 +19,12 @@
   /* Carousel */
   &__carousel {
     margin-top: 4rem; /* 64px */
+    max-width: var(--container-md);
+    margin-inline: auto;
+    padding: 0 1.5rem;
 
     .swiper {
-      overflow: visible;
-      padding: 0 1rem;
+      overflow: hidden;
     }
 
     .swiper-slide {
@@ -93,7 +95,6 @@
   }
 
   &__text-wrap {
-    margin-top: auto;
     padding-top: 1.25rem;
   }
 
@@ -299,6 +300,10 @@
 
   @include md {
     padding: 3rem 0;
+
+    &__carousel {
+      padding: 0 1rem;
+    }
 
     &__card {
       padding: 1.25rem;

@@ -1,14 +1,22 @@
 import Swiper from 'swiper';
+import { Autoplay } from 'swiper/modules';
 
 function TestimonialsSlider() {
     const swiperEl = document.querySelector('.js-testimonials-swiper');
     if (!swiperEl) return;
 
     new Swiper(swiperEl, {
+        modules: [Autoplay],
         slidesPerView: 1.15,
         spaceBetween: 12,
         grabCursor: true,
         loop: true,
+        speed: 420,
+        autoplay: {
+            delay: 2100,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
         breakpoints: {
             576: {
                 slidesPerView: 2,

@@ -1,5 +1,6 @@
 html {
   caret-color: var(--color-primary);
+   overflow-x: hidden;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 
   &.no-scroll {
     overflow: hidden;

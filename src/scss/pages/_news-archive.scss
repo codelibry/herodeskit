@@ -118,14 +118,16 @@ main:has(.news-archive__hero) + footer {
     transition: var(--transition-base);
 
     &.is-current {
-      background-color: var(--color-white);
-      color: var(--color-black);
-      border-color: var(--color-white);
+      background-color: var(--color-hover);
+      color: var(--color-white);
+      border-color: var(--color-hover);
     }
 
     @media (hover: hover) {
       &:not(.is-current):hover {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: var(--color-hover);
+        border-color: var(--color-hover);
+        color: var(--color-white);
       }
     }
   }
@@ -170,7 +172,9 @@ main:has(.news-archive__hero) + footer {
 
     @media (hover: hover) {
       &:hover {
-        background-color: rgba(255, 255, 255, 0.08);
+        background-color: var(--color-hover);
+        border-color: var(--color-hover);
+        color: var(--color-white);
       }
     }
   }

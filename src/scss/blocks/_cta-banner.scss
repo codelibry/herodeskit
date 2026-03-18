@@ -134,7 +134,10 @@
 
   @media (hover: hover) {
     &:hover {
-      opacity: 0.8;
+      background-color: var(--color-hover);
+      border-color: var(--color-hover);
+      color: var(--color-white);
+      opacity: 1;
     }
   }
 }
@@ -153,8 +156,9 @@
 
   @media (hover: hover) {
     &:hover {
-      --button-bg: var(--color-white);
-      --button-text: var(--color-black);
+      background-color: var(--color-hover);
+      border-color: var(--color-hover);
+      color: var(--color-white);
       opacity: 1;
     }
   }
