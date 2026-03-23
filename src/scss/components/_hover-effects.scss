@@ -18,6 +18,7 @@
 /* Glow — lift + subtle glow */
 .hover-glow {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
 
   @media (hover: hover) {
     &:hover {

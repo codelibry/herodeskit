@@ -140,6 +140,12 @@
       opacity: 1;
     }
   }
+
+  @include md {
+    height: 42px;
+    font-size: 1.125rem; //18px
+    padding: 0 1.5rem;
+  }
 }
 
 .button.button--cta-outline {
@@ -161,5 +167,11 @@
       color: var(--color-white);
       opacity: 1;
     }
+  }
+
+  @include md {
+    height: 42px;
+    font-size: 1.125rem; //18px
+    padding: 0 1.5rem;
   }
 }

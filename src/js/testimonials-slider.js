@@ -50,7 +50,7 @@ function TestimonialsSlider() {
     timer = null;
   }
 
-  startAutoplay();
+  // startAutoplay();
 
   // Pause while the user hovers over the slider.
   swiperEl.addEventListener('mouseenter', () => {

@@ -15,6 +15,9 @@
     background-color: var(--color-dark);
     border-radius: 40px;
     padding: 2.75rem 2rem; /* 44px / 32px */
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
   }
 
   &__icon {
@@ -42,6 +45,7 @@
     font-size: 1.625rem; /* 26px */
     line-height: 1.125; /* 36px */
     color: var(--color-white);
+    max-width: 17rem;
   }
 
   &__content {
@@ -101,6 +105,9 @@
 
   @include md {
     padding: 3rem 0;
+    &__title {
+      max-width: unset;
+    }
   }
 
   @include sm {

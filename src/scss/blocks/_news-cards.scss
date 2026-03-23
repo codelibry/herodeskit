@@ -173,8 +173,8 @@
   }
 
   @include md {
-    font-size: 1.25rem;
-    height: 65px;
+    height: 42px;
+    font-size: 1.125rem; //18px
     min-width: auto;
     padding: 0 1.5rem;
   }
