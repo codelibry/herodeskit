@@ -78,6 +78,23 @@
     }
   }
 
+  /* Pagination dots — visible on mobile only */
+  &__pagination {
+    display: none;
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.35);
+    opacity: 1;
+    transition: background var(--transition-base);
+
+    &-active {
+      background: var(--color-white);
+    }
+  }
+
   /* Card styles — same as services section */
   &__card {
     display: flex;
@@ -193,15 +210,16 @@
       max-width: none;
     }
 
-    &__prev,
-    &__next {
-      width: 56px;
-      height: 56px;
+    &__nav {
+      display: none;
+    }
 
-      svg {
-        width: 28px;
-        height: 6px;
-      }
+    &__pagination {
+      position: static;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.75rem;
     }
 
     .swiper-slide {

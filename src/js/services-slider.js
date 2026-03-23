@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
 function ServicesSlider() {
@@ -13,14 +13,21 @@ function ServicesSlider() {
 
     if (!swiperEl) return;
 
+    const paginationEl = section.querySelector('.services-slider__pagination');
+
     new Swiper(swiperEl, {
-        modules: [Navigation],
+        modules: [Navigation, Pagination],
         slidesPerView: 'auto',
         spaceBetween: 30,
         grabCursor: true,
         navigation: {
             prevEl: prevBtn,
             nextEl: nextBtn,
+        },
+        pagination: {
+            el: paginationEl,
+            clickable: true,
+            renderBullet: (index, className) => `<button type="button" class="${className}" aria-label="Go to slide ${index + 1}"></button>`,
         },
     });
 }

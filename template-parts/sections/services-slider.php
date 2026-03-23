@@ -65,6 +65,7 @@ if (empty($cards)) {
                         </div>
                     <?php endforeach; ?>
                 </div>
+                <div class="swiper-pagination services-slider__pagination"></div>
             </div>
         </div>
 
