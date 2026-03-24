@@ -228,13 +228,13 @@
     &__image,
     &__video-player {
       border-radius: var(--radius-md);
-      aspect-ratio: 384 / 384;
+      aspect-ratio: 1.17 / 1;
     }
 
     &__img,
     &__video,
     &__poster {
-      aspect-ratio: 384 / 384;
+      aspect-ratio: 1.17 / 1;
     }
 
     &__play {
